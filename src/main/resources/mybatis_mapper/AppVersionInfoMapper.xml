@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xuexiang.xupdateservice.mapper.AppVersionInfoMapper">
+  <resultMap id="BaseResultMap" type="com.xuexiang.xupdateservice.model.AppVersionInfo">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="version_id" jdbcType="INTEGER" property="versionId" />
+    <result column="update_status" jdbcType="INTEGER" property="updateStatus" />
+    <result column="version_code" jdbcType="INTEGER" property="versionCode" />
+    <result column="version_name" jdbcType="VARCHAR" property="versionName" />
+    <result column="upload_time" jdbcType="VARCHAR" property="uploadTime" />
+    <result column="apk_size" jdbcType="INTEGER" property="apkSize" />
+    <result column="app_key" jdbcType="VARCHAR" property="appKey" />
+    <result column="modify_content" jdbcType="LONGVARCHAR" property="modifyContent" />
+    <result column="download_url" jdbcType="LONGVARCHAR" property="downloadUrl" />
+    <result column="apk_md5" jdbcType="LONGVARCHAR" property="apkMd5" />
+  </resultMap>
+</mapper>
