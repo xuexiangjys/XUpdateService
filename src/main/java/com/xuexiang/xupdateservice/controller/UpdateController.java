@@ -31,6 +31,7 @@ import java.io.IOException;
 @RestController
 @RequestMapping(value = "/update")
 public class UpdateController {
+    private static final int SERVICE_ERROR_CODE = 5000;
 
     private static final Logger logger = LoggerFactory.getLogger(UpdateController.class);
 
@@ -51,21 +52,21 @@ public class UpdateController {
     public ApiResult addAppVersionInfo(AppVersionInfo appVersionInfo) {
         ApiResult<AppVersionInfo> result = new ApiResult<>();
         if (updateService.getAppVersionInfo(appVersionInfo.getVersionCode(), appVersionInfo.getAppKey()) != null) {
-            return result.setCode(5000).setMsg("该版本信息已存在！");
+            return getOnErrorApiResult(result, "该版本信息已存在！");
         } else {
             if (updateService.addAppVersionInfo(appVersionInfo)) {
                 return result.setData(updateService.getAppVersionInfo(appVersionInfo.getVersionCode(), appVersionInfo.getAppKey()));
             } else {
-                return result.setCode(5000).setMsg("版本信息添加失败！");
+                return getOnErrorApiResult(result, "版本信息添加失败！");
             }
         }
     }
 
-//    @ResponseBody
-//    @RequestMapping(value = "/updateVersionInfo", method = RequestMethod.POST)
-//    public ApiResult updateAppVersionInfo(AppVersionInfo appVersionInfo) {
-//        return new ApiResult<Boolean>().setData(updateService.updateAppVersionInfo(appVersionInfo));
-//    }
+    @ResponseBody
+    @RequestMapping(value = "/updateVersionInfo", method = RequestMethod.POST)
+    public ApiResult updateAppVersionInfo(AppVersionInfo appVersionInfo) {
+        return new ApiResult<Boolean>().setData(updateService.updateAppVersionInfo(appVersionInfo));
+    }
 
     /**
      * 上传apk文件
@@ -90,13 +91,13 @@ public class UpdateController {
 
                 result.setData(updateService.updateAppVersionInfo(appVersionInfo));
             } else {
-                result.setCode(5000)
+                result.setCode(SERVICE_ERROR_CODE)
                         .setMsg("APK上传失败")
                         .setData(false);
             }
         } catch (Exception e) {
             e.printStackTrace();
-            result.setCode(5001)
+            result.setCode(SERVICE_ERROR_CODE)
                     .setMsg(e.getMessage())
                     .setData(false);
         }
@@ -105,9 +106,10 @@ public class UpdateController {
 
     @ResponseBody
     @RequestMapping(value = "/addAppVersion", method = RequestMethod.POST)
-    public String addAppVersion(MultipartFile file, AppVersionInfo appVersionInfo) {
+    public ApiResult addAppVersion(MultipartFile file, AppVersionInfo appVersionInfo) {
+        ApiResult<String> apiResult = new ApiResult<>();
         if (updateService.getAppVersionInfo(appVersionInfo.getVersionCode(), appVersionInfo.getAppKey()) != null) {
-            return "该版本信息已存在！";
+            return getOnErrorApiResult(apiResult, "该版本信息已存在！");
         } else {
             boolean result = updateService.addAppVersionInfo(appVersionInfo);
             if (result) {
@@ -122,21 +124,25 @@ public class UpdateController {
                         newVersion.setDownloadUrl(fileName);
 
                         if (updateService.updateAppVersionInfo(newVersion)) {
-                            return "版本信息添加成功！";
+                            return apiResult.setData("版本信息添加成功!" );
                         } else {
-                            return "Apk信息添加失败！";
+                            return getOnErrorApiResult(apiResult, "Apk信息添加失败!");
                         }
                     } else {
-                        return "APK上传失败！";
+                        return getOnErrorApiResult(apiResult, "APK上传失败:");
                     }
                 } catch (Exception e) {
                     e.printStackTrace();
-                    return "APK上传失败:" + e.getMessage();
+                    return getOnErrorApiResult(apiResult, "APK上传失败:" + e.getMessage());
                 }
             } else {
-                return "版本信息添加失败！";
+                return getOnErrorApiResult(apiResult, "版本信息添加失败！");
             }
         }
+    }
+
+    private <T> ApiResult<T> getOnErrorApiResult(ApiResult<T> apiResult, String errorMsg) {
+        return apiResult.setCode(SERVICE_ERROR_CODE).setMsg(errorMsg);
     }
 
 
