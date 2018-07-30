@@ -132,15 +132,40 @@ appVersionInfo= {
 
 ### 版本更新接口
 
+#### 1、版本信息检查
+
 * 请求类型: post
 * url : /update/checkVersion
 * 参数 :
 
 ```
-
+versionCode=1,
+appKey=com.xuexiang.xupdatedemo 
 ```
 
 * 响应 :
 
 ```
+{
+    "Msg":"",
+    "Code":0,
+    "Data":{
+        "apkMd5":"E4B79A36EFB9F17DF7E3BB161F9BCFD8",
+        "versionId":11,
+        "updateStatus":1,
+        "downloadUrl":"xupdate_demo_1.0.2.apk",
+        "modifyContent":"1、优化api接口。\r\n2、添加使用demo演示。\r\n3、新增自定义更新服务API接口。\r\n4、优化更新提示界面。",
+        "appKey":"com.xuexiang.xupdatedemo",
+        "apkSize":1649,
+        "uploadTime":"2018-07-30 09:47:25",
+        "versionName":"1.23.4",
+        "versionCode":34
+    }
+}
 ```
+
+#### 2、最新版本下载
+
+* 请求类型: get
+* url : /update/apk/{fileName:.+}
+* 响应 : 文件流
