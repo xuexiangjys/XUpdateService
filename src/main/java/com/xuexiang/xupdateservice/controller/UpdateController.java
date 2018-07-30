@@ -43,20 +43,29 @@ public class UpdateController {
     @ResponseBody
     @RequestMapping(value = "/checkVersion", method = RequestMethod.POST)
     public ApiResult doCheckVersion(int versionCode, String appKey) {
-        return new ApiResult<AppVersionInfo>().setData(updateService.getAppVersionInfo(versionCode, appKey));
+        return new ApiResult<AppVersionInfo>().setData(updateService.getLatestAppVersionInfo(versionCode, appKey));
     }
 
     @ResponseBody
     @RequestMapping(value = "/addVersionInfo", method = RequestMethod.POST)
     public ApiResult addAppVersionInfo(AppVersionInfo appVersionInfo) {
-        return new ApiResult<Boolean>().setData(updateService.addAppVersionInfo(appVersionInfo));
+        ApiResult<AppVersionInfo> result = new ApiResult<>();
+        if (updateService.getAppVersionInfo(appVersionInfo.getVersionCode(), appVersionInfo.getAppKey()) != null) {
+            return result.setCode(5000).setMsg("该版本信息已存在！");
+        } else {
+            if (updateService.addAppVersionInfo(appVersionInfo)) {
+                return result.setData(updateService.getAppVersionInfo(appVersionInfo.getVersionCode(), appVersionInfo.getAppKey()));
+            } else {
+                return result.setCode(5000).setMsg("版本信息添加失败！");
+            }
+        }
     }
 
-    @ResponseBody
-    @RequestMapping(value = "/updateVersionInfo", method = RequestMethod.POST)
-    public ApiResult updateAppVersionInfo(AppVersionInfo appVersionInfo) {
-        return new ApiResult<Boolean>().setData(updateService.updateAppVersionInfo(appVersionInfo));
-    }
+//    @ResponseBody
+//    @RequestMapping(value = "/updateVersionInfo", method = RequestMethod.POST)
+//    public ApiResult updateAppVersionInfo(AppVersionInfo appVersionInfo) {
+//        return new ApiResult<Boolean>().setData(updateService.updateAppVersionInfo(appVersionInfo));
+//    }
 
     /**
      * 上传apk文件
@@ -93,6 +102,43 @@ public class UpdateController {
         }
         return result;
     }
+
+    @ResponseBody
+    @RequestMapping(value = "/addAppVersion", method = RequestMethod.POST)
+    public String addAppVersion(MultipartFile file, AppVersionInfo appVersionInfo) {
+        if (updateService.getAppVersionInfo(appVersionInfo.getVersionCode(), appVersionInfo.getAppKey()) != null) {
+            return "该版本信息已存在！";
+        } else {
+            boolean result = updateService.addAppVersionInfo(appVersionInfo);
+            if (result) {
+                AppVersionInfo newVersion = updateService.getAppVersionInfo(appVersionInfo.getVersionCode(), appVersionInfo.getAppKey());
+                try {
+                    String fileName = fileService.storeFile(file);
+                    if (!StringUtils.isEmpty(fileName)) {  //更新apk信息
+                        File apkFile = fileService.loadFileAsResource(fileName).getFile();
+                        newVersion.setApkMd5(Md5Utils.getFileMD5(apkFile));
+                        newVersion.setApkSize(FileUtils.getApkFileSize(apkFile));
+                        newVersion.setUploadTime(DateUtils.getNowString(DateUtils.yyyyMMddHHmmss.get()));
+                        newVersion.setDownloadUrl(fileName);
+
+                        if (updateService.updateAppVersionInfo(newVersion)) {
+                            return "版本信息添加成功！";
+                        } else {
+                            return "Apk信息添加失败！";
+                        }
+                    } else {
+                        return "APK上传失败！";
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    return "APK上传失败:" + e.getMessage();
+                }
+            } else {
+                return "版本信息添加失败！";
+            }
+        }
+    }
+
 
     @GetMapping("/apk/{fileName:.+}")
     public ResponseEntity<Resource> downloadFile(@PathVariable String fileName, HttpServletRequest request) throws Exception {

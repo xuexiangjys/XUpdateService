@@ -22,11 +22,8 @@ public class UpdateServiceImpl implements UpdateService {
     private AppVersionInfoMapper appVersionInfoMapper;//这里会报错，但是并不会影响
 
     @Override
-    public AppVersionInfo getAppVersionInfo(int versionCode, String appKey) {
-        Condition condition = new Condition(AppVersionInfo.class);
-        condition.createCriteria().andEqualTo("appKey", appKey);
-        condition.setOrderByClause("version_code desc"); //根据版本号降序
-        List<AppVersionInfo> appInfos = appVersionInfoMapper.selectByExample(condition);
+    public AppVersionInfo getLatestAppVersionInfo(int versionCode, String appKey) {
+        List<AppVersionInfo> appInfos = getAppVersionInfo(appKey);
 
         if (appInfos.size() > 0) {
             AppVersionInfo appVersionInfo = appInfos.get(0); //获取到最新的版本
@@ -37,6 +34,28 @@ public class UpdateServiceImpl implements UpdateService {
             }
         } else {
             return new AppVersionInfo().setUpdateStatus(UpdateService.NO_NEW_VERSION);
+        }
+    }
+
+    @Override
+    public List<AppVersionInfo> getAppVersionInfo(String appKey) {
+        Condition condition = new Condition(AppVersionInfo.class);
+        condition.createCriteria().andEqualTo("appKey", appKey);
+        condition.setOrderByClause("version_code desc"); //根据版本号降序
+        return appVersionInfoMapper.selectByExample(condition);
+    }
+
+    @Override
+    public AppVersionInfo getAppVersionInfo(int versionCode, String appKey) {
+        Condition condition = new Condition(AppVersionInfo.class);
+        condition.createCriteria().andEqualTo("appKey", appKey)
+                .andEqualTo("versionCode", versionCode);
+        condition.setOrderByClause("version_code desc"); //根据版本号降序
+        List<AppVersionInfo> list = appVersionInfoMapper.selectByExample(condition);
+        if (list != null && list.size() > 0) {
+            return list.get(0);
+        } else {
+            return null;
         }
     }
 

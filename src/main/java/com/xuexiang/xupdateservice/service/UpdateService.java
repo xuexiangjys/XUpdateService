@@ -2,6 +2,8 @@ package com.xuexiang.xupdateservice.service;
 
 import com.xuexiang.xupdateservice.model.AppVersionInfo;
 
+import java.util.List;
+
 /**
  * @author xuexiang
  * @since 2018/7/26 上午11:04
@@ -28,8 +30,21 @@ public interface UpdateService {
      * @param appKey
      * @return
      */
-    AppVersionInfo getAppVersionInfo(int versionCode, String appKey);
+    AppVersionInfo getLatestAppVersionInfo(int versionCode, String appKey);
 
+    /**
+     * 根据appKey获取唯一apk的所有版本信息
+     * @param appKey
+     * @return
+     */
+    List<AppVersionInfo> getAppVersionInfo(String appKey);
+
+    /**
+     * 根据appKey和versionCode获取唯一的版本信息
+     * @param appKey
+     * @return
+     */
+    AppVersionInfo getAppVersionInfo(int versionCode, String appKey);
 
     /**
      * 添加app版本信息

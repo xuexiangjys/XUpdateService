@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>XUpdate Service</title>
+    <link rel="stylesheet" href="./css/main.css"/>
+</head>
+<body>
+<noscript>
+    <h2>Sorry! Your browser doesn't support Javascript</h2>
+</noscript>
+<div class="update-container">
+    <div class="update-header">
+        <h2>APP版本管理</h2>
+    </div>
+
+    <div class="app-version-info">
+        <form id="infoForm" name="infoForm" target="nm_iframe">
+            <label>应用唯一号(App Key): </label><br>
+            <input id="appKey" type="text" name="appKey" class="version-input" required/><br>
+            <label>版本名: [例如：1.0.24]</label><br>
+            <input id="versionName" type="text" name="versionName" class="version-input" required/><br>
+            <label>版本号: [例如：24]</label><br>
+            <input id="versionCode" type="number" name="versionCode" class="version-input" required/><br>
+            <label>是否强制更新: </label>
+            <input id="updateStatus1" type="radio" value="1" name="updateStatus">否</input>
+            <input id="updateStatus2" type="radio" value="2" name="updateStatus">是</input><br>
+            <label>更新内容: </label><br>
+            <textarea id="modifyContent" name="modifyContent" rows="5" cols="100" class="version-input"
+                      placeholder="请输入更新日志..."></textarea>
+            <div>
+                <button type="submit" class="submit-btn" onclick="onAddInfo()">保存</button>
+                <button type="reset" class="reset-btn">重置</button>
+            </div>
+        </form>
+        <br>
+        <form id="uploadForm" name="uploadForm" target="nm_iframe">
+            <label>APK文件: </label><br>
+            <input id="file" type="file" name="file" class="file-input" required/>
+            <button type="submit" class="submit-btn" onclick="onUpload()">保存</button>
+        </form><br>
+
+        <iframe id="id_iframe" name="nm_iframe" style="display:none;"></iframe>
+        <div class="update-response">
+            <div id="result"></div>
+        </div>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="./js/upload.js" ></script>
+</body>
+</html>
