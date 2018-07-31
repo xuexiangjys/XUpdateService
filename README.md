@@ -28,7 +28,7 @@ git clone https://github.com/xuexiangjys/XUpdateService.git
 
 3.进行本地数据库的配置。
 
-因为使用的是MySql数据库，如果你电脑上没有安装MySql的话，请先[点击安装](https://www.mysql.com/)。
+因为使用的是MySql数据库，如果你电脑上没有安装MySql的话，请先[点击安装](https://www.mysql.com/)。你可以安装`MySQL Community Server`和`MySQL Workbench`,建议下载的MySql版本是5.7。
 
 * MySql安装完成后，请执行根目录下`sql`文件夹下的脚本，创建数据库表和内容。
 
