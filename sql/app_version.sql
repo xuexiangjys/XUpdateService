@@ -18,6 +18,7 @@
 --
 -- Table structure for table `app_version_info`
 --
+use xupdate;
 
 DROP TABLE IF EXISTS `app_version_info`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
