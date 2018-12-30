@@ -44,11 +44,19 @@ git clone https://github.com/xuexiangjys/XUpdateService.git
 
 ## 程序打包
 
-执行`./gradlew bootRepackage`或点击Gradle任务栏点击`bootRepackage`，如下图：
+1.执行`./gradlew bootRepackage`或点击Gradle任务栏点击`bootRepackage`，如下图：
 
 ![](https://github.com/xuexiangjys/XUpdateService/blob/master/img/1.png)
 
+2.打包后的是jar文件，打包路径：`build/libs/` 下，如下图：
 
+![](https://github.com/xuexiangjys/XUpdateService/blob/master/img/2.png)
+
+3.最后执行jar包即可
+
+```
+java -jar build/libs/xxxxx.jar
+```
 ----------------
 
 ## API构成
