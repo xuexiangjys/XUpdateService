@@ -42,6 +42,13 @@ git clone https://github.com/xuexiangjys/XUpdateService.git
 
 ![](https://github.com/xuexiangjys/XUpdateService/blob/master/img/demo.png)
 
+## 程序打包
+
+执行`./gradlew bootRepackage`或点击Gradle任务栏点击`bootRepackage`，如下图：
+
+![](https://github.com/xuexiangjys/XUpdateService/blob/master/img/1.png)
+
+
 ----------------
 
 ## API构成
