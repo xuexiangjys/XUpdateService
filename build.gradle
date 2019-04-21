@@ -1,6 +1,6 @@
 buildscript {
 	ext {
-		springBootVersion = '1.5.6.RELEASE'
+		springBootVersion = '1.5.13.RELEASE'
 	}
 	repositories {
 		mavenCentral()
@@ -29,31 +29,34 @@ configurations {
 
 dependencies {
     //web服务
-	compile('org.springframework.boot:spring-boot-starter-web')
-	compile('org.mybatis.spring.boot:mybatis-spring-boot-starter:1.3.0')
-	testCompile('org.springframework.boot:spring-boot-starter-test')
+	implementation('org.springframework.boot:spring-boot-starter-web')
+	implementation('org.mybatis.spring.boot:mybatis-spring-boot-starter:1.3.0')
+	testImplementation('org.springframework.boot:spring-boot-starter-test')
 
 	//物理分页
-	compile('com.github.pagehelper:pagehelper-spring-boot-starter:1.1.2')
+	implementation('com.github.pagehelper:pagehelper-spring-boot-starter:1.1.2')
 
 	//数据库连接
-	compile('org.springframework.boot:spring-boot-starter-jdbc')
-	compile('mysql:mysql-connector-java:5.1.35')
-	compile('com.alibaba:fastjson:1.2.47')
-	compile('com.alibaba:druid:1.0.11')
-	compile('com.alibaba:druid-spring-boot-starter:1.1.0')
+	implementation('org.springframework.boot:spring-boot-starter-jdbc')
+	implementation('mysql:mysql-connector-java:5.1.35')
+	implementation('com.alibaba:fastjson:1.2.47')
+	implementation('com.alibaba:druid:1.0.11')
+	implementation('com.alibaba:druid-spring-boot-starter:1.1.0')
+
+	// token令牌
+	implementation 'io.jsonwebtoken:jjwt:0.9.0'
 
 	//AOP
-	compile('org.aspectj:aspectjweaver:1.8.13')
-	compile('org.assertj:assertj-core')
-	compile('org.apache.commons:commons-lang3:3.4')
-	compile('org.apache.commons:commons-collections4:4.1')
+	implementation('org.aspectj:aspectjweaver:1.8.13')
+	implementation('org.assertj:assertj-core')
+	implementation('org.apache.commons:commons-lang3:3.4')
+	implementation('org.apache.commons:commons-collections4:4.1')
 
-	compile('tk.mybatis:mapper-spring-boot-starter:1.2.4')
 
 	//mybatis自动生成代码
 	mybatisGenerator 'org.mybatis.generator:mybatis-generator-core:1.3.5'
 	mybatisGenerator 'tk.mybatis:mapper:3.3.9'
+	implementation('tk.mybatis:mapper-spring-boot-starter:1.2.4')
 
 
 }

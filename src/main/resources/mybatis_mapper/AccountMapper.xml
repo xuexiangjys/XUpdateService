@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xuexiang.xupdateservice.mapper.AccountMapper">
+  <resultMap id="BaseResultMap" type="com.xuexiang.xupdateservice.model.Account">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="account_id" jdbcType="INTEGER" property="accountId" />
+    <result column="login_name" jdbcType="VARCHAR" property="loginName" />
+    <result column="password" jdbcType="VARCHAR" property="password" />
+    <result column="nick" jdbcType="VARCHAR" property="nick" />
+    <result column="authority" jdbcType="VARCHAR" property="authority" />
+    <result column="phone" jdbcType="VARCHAR" property="phone" />
+    <result column="address" jdbcType="VARCHAR" property="address" />
+    <result column="register_time" jdbcType="TIMESTAMP" property="registerTime" />
+  </resultMap>
+</mapper>

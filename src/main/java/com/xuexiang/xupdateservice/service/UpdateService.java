@@ -34,13 +34,31 @@ public interface UpdateService {
 
     /**
      * 根据appKey获取唯一apk的所有版本信息
+     *
      * @param appKey
      * @return
      */
     List<AppVersionInfo> getAppVersionInfo(String appKey);
 
     /**
+     * 获取所有应用的版本信息
+     *
+     * @return
+     */
+    List<AppVersionInfo> getAppVersionInfo();
+
+    /**
+     * 分页查询所有应用的版本信息
+     *
+     * @param pageNum
+     * @param pageSize
+     * @return
+     */
+    List<AppVersionInfo> getAppVersionInfo(int pageNum, int pageSize);
+
+    /**
      * 根据appKey和versionCode获取唯一的版本信息
+     *
      * @param appKey
      * @return
      */
@@ -61,5 +79,6 @@ public interface UpdateService {
      * @return
      */
     boolean updateAppVersionInfo(AppVersionInfo appVersionInfo);
+
 
 }

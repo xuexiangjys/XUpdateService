@@ -18,6 +18,7 @@ package com.xuexiang.xupdateservice.api.response;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.xuexiang.xupdateservice.exception.ApiException;
 
 /**
  * 提供的默认的标注返回api
@@ -67,6 +68,13 @@ public class ApiResult<T> {
         return this;
     }
 
+    @JsonIgnore
+    public ApiResult setError(int code, String msg) {
+        Code = code;
+        Msg = msg;
+        return this;
+    }
+
     @Override
     public String toString() {
         return "ApiResult{" +
@@ -74,5 +82,32 @@ public class ApiResult<T> {
                 ", Msg='" + Msg + '\'' +
                 ", Data=" + Data +
                 '}';
+    }
+
+
+
+    /**
+     * 获取出错返回
+     *
+     * @param ex
+     * @return
+     */
+    public static ApiResult error(ApiException ex) {
+        ApiResult apiResult = new ApiResult();
+        apiResult.setError(ex.getCode(), ex.getMessage());
+        return apiResult;
+    }
+
+    /**
+     * 获取出错返回
+     *
+     * @param code
+     * @param msg
+     * @return
+     */
+    public static ApiResult error(int code, String msg) {
+        ApiResult apiResult = new ApiResult();
+        apiResult.setError(code, msg);
+        return apiResult;
     }
 }
