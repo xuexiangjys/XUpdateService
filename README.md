@@ -36,7 +36,7 @@ git clone https://github.com/xuexiangjys/XUpdateService.git
 
 * 如果你需要使用mybatis的自动生成代码脚本`generator`，请配置`src/main/resources/db-mysql.properties`文件，然后执行`./gradlew mybatisGenerate`或者在Gradle的Task列表中选择`mybatisGenerate`双击即可。
 
-4.直接运行`XHttpApiApplication`即可运行服务。
+4.直接运行`XUpdateServiceApplication`即可运行服务。
 
 5.在浏览器中输入`http://localhost:1111/`即可打开版本更新管理界面。
 
