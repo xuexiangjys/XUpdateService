@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 5.7.17, for macos10.12 (x86_64)
+-- MySQL dump 10.13  Distrib 5.7.17, for Win64 (x86_64)
 --
--- Host: localhost    Database: update
+-- Host: localhost    Database: xupdate
 -- ------------------------------------------------------
--- Server version	5.7.22
+-- Server version	5.7.25-log
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -16,10 +16,41 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `app_version_info`
+-- Table structure for table `account`
 --
 use xupdate;
 
+DROP TABLE IF EXISTS `account`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `account` (
+  `account_id` int(11) NOT NULL AUTO_INCREMENT,
+  `login_name` varchar(45) NOT NULL DEFAULT 'admin',
+  `password` varchar(45) NOT NULL DEFAULT '123456',
+  `nick` varchar(45) NOT NULL DEFAULT 'admin',
+  `authority` varchar(45) NOT NULL DEFAULT 'admin',
+  `phone` tinytext,
+  `address` varchar(60) DEFAULT NULL,
+  `register_time` datetime DEFAULT NULL,
+  PRIMARY KEY (`account_id`),
+  UNIQUE KEY `account_id_UNIQUE` (`account_id`),
+  UNIQUE KEY `login_name_UNIQUE` (`login_name`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `account`
+--
+
+LOCK TABLES `account` WRITE;
+/*!40000 ALTER TABLE `account` DISABLE KEYS */;
+INSERT INTO `account` VALUES (1,'admin','123456','admin','admin','13513957542','南京市江宁区','2018-05-06 00:00:00'),(2,'xuexiang','123456','薛翔','admin','13913845875','南京市江宁区','2018-12-11 00:00:00');
+/*!40000 ALTER TABLE `account` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `app_version_info`
+--
 DROP TABLE IF EXISTS `app_version_info`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
@@ -57,4 +88,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-07-30 15:44:13
+-- Dump completed on 2019-04-22 14:34:07
