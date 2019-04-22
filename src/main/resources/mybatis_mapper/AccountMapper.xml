@@ -10,7 +10,8 @@
     <result column="password" jdbcType="VARCHAR" property="password" />
     <result column="nick" jdbcType="VARCHAR" property="nick" />
     <result column="authority" jdbcType="VARCHAR" property="authority" />
-    <result column="phone" jdbcType="VARCHAR" property="phone" />
+    <result column="avatar" jdbcType="VARCHAR" property="avatar" />
+    <result column="phone" jdbcType="CHAR" property="phone" />
     <result column="address" jdbcType="VARCHAR" property="address" />
     <result column="register_time" jdbcType="TIMESTAMP" property="registerTime" />
   </resultMap>

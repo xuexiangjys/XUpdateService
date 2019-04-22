@@ -18,7 +18,6 @@
 --
 -- Table structure for table `account`
 --
-use xupdate;
 
 DROP TABLE IF EXISTS `account`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
@@ -29,7 +28,8 @@ CREATE TABLE `account` (
   `password` varchar(45) NOT NULL DEFAULT '123456',
   `nick` varchar(45) NOT NULL DEFAULT 'admin',
   `authority` varchar(45) NOT NULL DEFAULT 'admin',
-  `phone` tinytext,
+  `avatar` varchar(60) DEFAULT NULL,
+  `phone` char(11) DEFAULT NULL,
   `address` varchar(60) DEFAULT NULL,
   `register_time` datetime DEFAULT NULL,
   PRIMARY KEY (`account_id`),
@@ -44,13 +44,14 @@ CREATE TABLE `account` (
 
 LOCK TABLES `account` WRITE;
 /*!40000 ALTER TABLE `account` DISABLE KEYS */;
-INSERT INTO `account` VALUES (1,'admin','123456','admin','admin','13513957542','南京市江宁区','2018-05-06 00:00:00'),(2,'xuexiang','123456','薛翔','admin','13913845875','南京市江宁区','2018-12-11 00:00:00');
+INSERT INTO `account` VALUES (1,'admin','123456','admin','admin',NULL,'13513957542','南京市江宁区','2018-05-06 00:00:00'),(2,'xuexiang','123456','薛翔','admin',NULL,'13913845875','南京市江宁区','2018-12-11 00:00:00');
 /*!40000 ALTER TABLE `account` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
 -- Table structure for table `app_version_info`
 --
+
 DROP TABLE IF EXISTS `app_version_info`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
@@ -88,4 +89,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-04-22 14:34:07
+-- Dump completed on 2019-04-22 14:58:07

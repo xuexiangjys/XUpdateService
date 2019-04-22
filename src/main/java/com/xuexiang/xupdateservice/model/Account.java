@@ -18,6 +18,8 @@ public class Account {
 
     private String authority;
 
+    private String avatar;
+
     private String phone;
 
     private String address;
@@ -67,6 +69,15 @@ public class Account {
 
     public Account setAuthority(String authority) {
         this.authority = authority;
+        return this;
+    }
+
+    public String getAvatar() {
+        return avatar;
+    }
+
+    public Account setAvatar(String avatar) {
+        this.avatar = avatar;
         return this;
     }
 
