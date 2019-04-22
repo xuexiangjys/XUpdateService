@@ -10,4 +10,5 @@ public class Constants {
      * 当前用户参数名
      */
     public final static String CURRENT_ACCOUNT = "CurrentAccount";
+
 }

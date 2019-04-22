@@ -2,6 +2,8 @@ package com.xuexiang.xupdateservice.controller;
 
 import com.xuexiang.xupdateservice.api.response.ApiResult;
 import com.xuexiang.xupdateservice.api.response.LoginInfo;
+import com.xuexiang.xupdateservice.component.annotation.CurrentAccount;
+import com.xuexiang.xupdateservice.component.annotation.LoginRequired;
 import com.xuexiang.xupdateservice.exception.ApiException;
 import com.xuexiang.xupdateservice.model.Account;
 import com.xuexiang.xupdateservice.service.AccountService;
@@ -48,6 +50,21 @@ public class AccountController {
         } else {
             throw new ApiException("用户名或密码错误！", COMMON_BUSINESS_ERROR);
         }
+    }
+
+    @LoginRequired
+    @ResponseBody
+    @RequestMapping(value = "/info", method = RequestMethod.GET)
+    public ApiResult getCurrentAccount(@CurrentAccount Account account) throws Exception {
+        return new ApiResult<Account>().setData(account);
+    }
+
+    @LoginRequired
+    @ResponseBody
+    @RequestMapping(value = "/logout", method = RequestMethod.POST)
+    public ApiResult logout() throws Exception {
+        //清理用户数据
+        return new ApiResult<Boolean>().setData(true);
     }
 
 }

@@ -21,17 +21,15 @@ public class CurrentAccountMethodArgumentResolver implements HandlerMethodArgume
 
     @Override
     public boolean supportsParameter(MethodParameter parameter) {
-        System.out.println("----------supportsParameter-----------" + parameter.getParameterType());
         return parameter.getParameterType().isAssignableFrom(Account.class)//判断是否能转成Account类型
                 && parameter.hasParameterAnnotation(CurrentAccount.class);//是否有CurrentAccount注解
     }
 
     @Override
     public Object resolveArgument(MethodParameter parameter, ModelAndViewContainer modelAndViewContainer, NativeWebRequest nativeWebRequest, WebDataBinderFactory webDataBinderFactory) throws Exception {
-        System.out.println("--------------resolveArgument-------------" + parameter);
-        Account user = (Account) nativeWebRequest.getAttribute(Constants.CURRENT_ACCOUNT, RequestAttributes.SCOPE_REQUEST);
-        if (user != null) {
-            return user;
+        Account account = (Account) nativeWebRequest.getAttribute(Constants.CURRENT_ACCOUNT, RequestAttributes.SCOPE_REQUEST);
+        if (account != null) {
+            return account;
         }
         throw new MissingServletRequestPartException(Constants.CURRENT_ACCOUNT);
     }

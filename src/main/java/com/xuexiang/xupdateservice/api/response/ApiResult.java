@@ -28,11 +28,11 @@ import com.xuexiang.xupdateservice.exception.ApiException;
  */
 public class ApiResult<T> {
 
-    @JsonProperty(value = "Code")
+    @JsonProperty(value = "code")
     private int Code = 0;
-    @JsonProperty(value = "Msg")
+    @JsonProperty(value = "msg")
     private String Msg = "";
-    @JsonProperty(value = "Data")
+    @JsonProperty(value = "data")
     private T Data;
 
     @JsonIgnore
