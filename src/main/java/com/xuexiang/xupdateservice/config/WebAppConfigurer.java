@@ -1,10 +1,16 @@
 package com.xuexiang.xupdateservice.config;
 
+import com.xuexiang.xupdateservice.component.interceptor.QuickRequestInterceptor;
+import com.xuexiang.xupdateservice.component.token.AuthenticationInterceptor;
+import com.xuexiang.xupdateservice.component.token.CurrentAccountMethodArgumentResolver;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.method.support.HandlerMethodArgumentResolver;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
+
+import java.util.List;
 
 /**
  * 配置URLInterceptor拦截器，以及拦截路径
@@ -18,10 +24,16 @@ public class WebAppConfigurer extends WebMvcConfigurerAdapter {
 
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-
+        registry.addInterceptor(new AuthenticationInterceptor());
+        registry.addInterceptor(new QuickRequestInterceptor());
         super.addInterceptors(registry);
     }
 
+    @Override
+    public void addArgumentResolvers(List<HandlerMethodArgumentResolver> argumentResolvers) {
+        argumentResolvers.add(new CurrentAccountMethodArgumentResolver());
+        super.addArgumentResolvers(argumentResolvers);
+    }
 
     @Override
     public void addCorsMappings(CorsRegistry registry) {

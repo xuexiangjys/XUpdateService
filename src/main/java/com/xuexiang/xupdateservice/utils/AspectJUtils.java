@@ -2,6 +2,7 @@ package com.xuexiang.xupdateservice.utils;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
+import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.assertj.core.util.Lists;
 import org.springframework.web.multipart.MultipartFile;
@@ -20,6 +21,21 @@ public final class AspectJUtils {
 
     private AspectJUtils() {
         throw new UnsupportedOperationException("u can't instantiate me...");
+    }
+
+    /**
+     * 获取方法名
+     *
+     * @param joinPoint
+     * @return
+     */
+    public static String getMethodName(JoinPoint joinPoint) {
+        String methodName = joinPoint.getSignature().toShortString();
+        String shortMethodNameSuffix = "(..)";
+        if (methodName.endsWith(shortMethodNameSuffix)) {
+            methodName = methodName.substring(0, methodName.length() - shortMethodNameSuffix.length());
+        }
+        return methodName;
     }
 
     /**

@@ -17,7 +17,7 @@ import java.util.Date;
  * @author xuexiang
  * @since 2018/8/6 下午4:27
  */
-public class TokenUtils {
+public final class TokenUtils {
 
     /**
      * 签名秘钥
@@ -95,7 +95,7 @@ public class TokenUtils {
      * @return
      */
     public static String parseToken(HttpServletRequest request) {
-        String accessToken = request.getHeader("token");
+        String accessToken = request.getHeader("X-Token");
         if (StringUtils.isEmpty(accessToken)) {
             accessToken = request.getParameter("token");
         }

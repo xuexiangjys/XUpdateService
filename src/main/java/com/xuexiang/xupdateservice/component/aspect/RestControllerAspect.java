@@ -1,4 +1,4 @@
-package com.xuexiang.xupdateservice.aspect;
+package com.xuexiang.xupdateservice.component.aspect;
 
 import com.xuexiang.xupdateservice.utils.AspectJUtils;
 import com.xuexiang.xupdateservice.utils.IpUtils;
@@ -10,6 +10,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
@@ -17,7 +18,7 @@ import javax.servlet.http.HttpServletRequest;
 import java.lang.reflect.Method;
 
 /**
- * 请求api日志记录
+ * 请求api日志记录（对{@link RestController}进行拦截）
  *
  * @author xuexiang
  * @since 2018/7/17 上午10:42
@@ -47,7 +48,7 @@ public class RestControllerAspect {
 
         String userAgent = request.getHeader("user-agent");
         String ip = IpUtils.getRealIp(request);
-        String methodName = this.getMethodName(joinPoint);
+        String methodName = AspectJUtils.getMethodName(joinPoint);
         String params = AspectJUtils.getMethodParams(joinPoint);
 
         logger.info("\n\r" +
@@ -65,16 +66,6 @@ public class RestControllerAspect {
                 "           |耗时:{}毫秒 ", methodName, deleteSensitiveContent, end - start);
         return result;
     }
-
-    private String getMethodName(ProceedingJoinPoint joinPoint) {
-        String methodName = joinPoint.getSignature().toShortString();
-        String shortMethodNameSuffix = "(..)";
-        if (methodName.endsWith(shortMethodNameSuffix)) {
-            methodName = methodName.substring(0, methodName.length() - shortMethodNameSuffix.length());
-        }
-        return methodName;
-    }
-
 
     /**
      * 判断是否需要记录日志

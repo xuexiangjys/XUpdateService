@@ -1,4 +1,4 @@
-package com.xuexiang.xupdateservice.config.interceptor;
+package com.xuexiang.xupdateservice.component.interceptor;
 
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
