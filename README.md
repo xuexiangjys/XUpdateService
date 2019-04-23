@@ -57,6 +57,17 @@ git clone https://github.com/xuexiangjys/XUpdateService.git
 ```
 java -jar build/libs/xxxxx.jar
 ```
+
+## 版本更新管理后台
+
+由于使用Java编写web管理后台不是很好看，因此我特地去学习了最近比较火的Vue.js编写了一个简洁优美的管理后台供大家参考。
+
+项目地址: https://github.com/xuexiangjys/xupdate-management
+
+### 项目预览
+
+![](https://github.com/xuexiangjys/xupdate-management/blob/master/art/2.png)
+
 ----------------
 
 ## API构成
