@@ -11,6 +11,8 @@ import com.xuexiang.xupdateservice.utils.TokenUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Date;
+
 import static com.xuexiang.xupdateservice.exception.ApiException.ERROR.COMMON_BUSINESS_ERROR;
 
 /**
@@ -38,9 +40,7 @@ public class AccountController {
         if (accountService.checkAccount(account.getLoginName()) == null) {
             throw new ApiException("账号不存在！", COMMON_BUSINESS_ERROR);
         }
-
         Account user = accountService.loginAccount(account.getLoginName(), account.getPassword());
-
         if (user != null) {
             ApiResult<LoginInfo> apiResult = new ApiResult<>();
             apiResult.setData(new LoginInfo()
@@ -65,6 +65,28 @@ public class AccountController {
     public ApiResult logout() throws Exception {
         //清理用户数据
         return new ApiResult<Boolean>().setData(true);
+    }
+
+    @ResponseBody
+    @RequestMapping(value = "/checkExist", method = RequestMethod.POST)
+    public ApiResult checkAccountExist(String loginName) throws Exception {
+        return new ApiResult<Boolean>().setData(accountService.checkAccount(loginName) != null);
+    }
+
+    @ResponseBody
+    @RequestMapping(value = "/register", method = RequestMethod.POST)
+    public ApiResult register(@RequestBody Account account) throws Exception {
+        if (accountService.checkAccount(account.getLoginName()) != null) {
+            throw new ApiException("账号已存在！", COMMON_BUSINESS_ERROR);
+        }
+        account.setRegisterTime(new Date());
+        return new ApiResult<Boolean>().setData(accountService.registerAccount(account));
+    }
+
+    @ResponseBody
+    @RequestMapping(value = "/delete")
+    public ApiResult deleteAccount(@RequestBody Account account) throws Exception {
+        return new ApiResult<Boolean>().setData(accountService.deleteAccount(account.getAccountId()));
     }
 
 }

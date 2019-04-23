@@ -55,8 +55,29 @@ public class UpdateController {
     }
 
     @ResponseBody
+    @RequestMapping(value = "/newVersion", method = RequestMethod.POST)
+    public ApiResult register(@RequestBody AppVersionInfo appVersionInfo) throws Exception {
+        return addNewAppVersion(appVersionInfo);
+    }
+
+    @ResponseBody
+    @RequestMapping(value = "/delete")
+    public ApiResult deleteAppVersionInfo(@RequestBody AppVersionInfo appVersionInfo) throws Exception {
+        return new ApiResult<Boolean>().setData(updateService.deleteAppVersionInfo(appVersionInfo.getVersionId()));
+    }
+
+    @ResponseBody
     @RequestMapping(value = "/addVersionInfo", method = RequestMethod.POST)
     public ApiResult addAppVersionInfo(AppVersionInfo appVersionInfo) {
+        return addNewAppVersion(appVersionInfo);
+    }
+
+    /**
+     * 添加新版本
+     * @param appVersionInfo
+     * @return
+     */
+    private ApiResult addNewAppVersion(AppVersionInfo appVersionInfo) {
         ApiResult<AppVersionInfo> result = new ApiResult<>();
         if (updateService.getAppVersionInfo(appVersionInfo.getVersionCode(), appVersionInfo.getAppKey()) != null) {
             return getOnErrorApiResult(result, "该版本信息已存在！");

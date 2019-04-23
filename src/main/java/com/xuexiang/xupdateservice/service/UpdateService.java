@@ -81,4 +81,13 @@ public interface UpdateService {
     boolean updateAppVersionInfo(AppVersionInfo appVersionInfo);
 
 
+    /**
+     * 删除版本信息
+     *
+     * @param versionId
+     * @return
+     */
+    boolean deleteAppVersionInfo(int versionId);
+
+
 }

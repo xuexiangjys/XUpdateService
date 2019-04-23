@@ -87,4 +87,9 @@ public class UpdateServiceImpl implements UpdateService {
     public boolean updateAppVersionInfo(AppVersionInfo appVersionInfo) {
         return appVersionInfoMapper.updateByPrimaryKeySelective(appVersionInfo) > 0;
     }
+
+    @Override
+    public boolean deleteAppVersionInfo(int versionId) {
+        return appVersionInfoMapper.deleteByPrimaryKey(versionId) > 0;
+    }
 }
