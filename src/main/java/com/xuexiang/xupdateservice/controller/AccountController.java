@@ -89,4 +89,11 @@ public class AccountController {
         return new ApiResult<Boolean>().setData(accountService.deleteAccount(account.getAccountId()));
     }
 
+    @ResponseBody
+    @RequestMapping(value = "/updateInfo")
+    public ApiResult updateAccountInfo(@RequestBody Account account) throws Exception {
+        return new ApiResult<Boolean>().setData(accountService.updateAccount(account));
+    }
+
+
 }

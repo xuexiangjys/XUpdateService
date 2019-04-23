@@ -67,6 +67,12 @@ public class UpdateController {
     }
 
     @ResponseBody
+    @RequestMapping(value = "/updateInfo")
+    public ApiResult updateAppVersionInfo(@RequestBody AppVersionInfo appVersionInfo) throws Exception {
+        return new ApiResult<Boolean>().setData(updateService.updateAppVersionInfo(appVersionInfo));
+    }
+
+    @ResponseBody
     @RequestMapping(value = "/addVersionInfo", method = RequestMethod.POST)
     public ApiResult addAppVersionInfo(AppVersionInfo appVersionInfo) {
         return addNewAppVersion(appVersionInfo);
@@ -88,12 +94,6 @@ public class UpdateController {
                 return getOnErrorApiResult(result, "版本信息添加失败！");
             }
         }
-    }
-
-    @ResponseBody
-    @RequestMapping(value = "/updateVersionInfo", method = RequestMethod.POST)
-    public ApiResult updateAppVersionInfo(AppVersionInfo appVersionInfo) {
-        return new ApiResult<Boolean>().setData(updateService.updateAppVersionInfo(appVersionInfo));
     }
 
     /**
