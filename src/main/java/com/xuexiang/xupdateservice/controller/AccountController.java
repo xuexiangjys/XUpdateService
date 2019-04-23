@@ -27,7 +27,7 @@ public class AccountController {
     private AccountService accountService;
 
     @ResponseBody
-    @RequestMapping(value = "/getAllAccount", method = RequestMethod.GET)
+    @RequestMapping(value = "/accounts", method = RequestMethod.GET)
     public ApiResult getAllAccount() throws Exception {
         return new ApiResult<>().setData(accountService.getAllAccount());
     }

@@ -21,6 +21,7 @@ import org.springframework.web.multipart.MultipartFile;
 import javax.servlet.http.HttpServletRequest;
 import java.io.File;
 import java.io.IOException;
+import java.util.List;
 
 /**
  * 版本更新api
@@ -45,6 +46,12 @@ public class UpdateController {
     @RequestMapping(value = "/checkVersion", method = RequestMethod.POST)
     public ApiResult doCheckVersion(int versionCode, String appKey) {
         return new ApiResult<AppVersionInfo>().setData(updateService.getLatestAppVersionInfo(versionCode, appKey));
+    }
+
+    @ResponseBody
+    @RequestMapping(value = "/versions", method = RequestMethod.GET)
+    public ApiResult getAllVersions() {
+        return new ApiResult<List<AppVersionInfo>>().setData(updateService.getAppVersionInfo());
     }
 
     @ResponseBody
@@ -83,11 +90,7 @@ public class UpdateController {
             if (!StringUtils.isEmpty(fileName)) {  //更新apk信息
                 AppVersionInfo appVersionInfo = new AppVersionInfo();
                 appVersionInfo.setVersionId(versionId);
-                File apkFile = fileService.loadFileAsResource(fileName).getFile();
-                appVersionInfo.setApkMd5(Md5Utils.getFileMD5(apkFile));
-                appVersionInfo.setApkSize(FileUtils.getApkFileSize(apkFile));
-                appVersionInfo.setUploadTime(DateUtils.getNowString(DateUtils.yyyyMMddHHmmss.get()));
-                appVersionInfo.setDownloadUrl(fileName);
+                updateVersionInfo(fileName, appVersionInfo);
 
                 result.setData(updateService.updateAppVersionInfo(appVersionInfo));
             } else {
@@ -104,6 +107,14 @@ public class UpdateController {
         return result;
     }
 
+    private void updateVersionInfo(String fileName, AppVersionInfo appVersionInfo) throws Exception {
+        File apkFile = fileService.loadFileAsResource(fileName).getFile();
+        appVersionInfo.setApkMd5(Md5Utils.getFileMD5(apkFile));
+        appVersionInfo.setApkSize(FileUtils.getApkFileSize(apkFile));
+        appVersionInfo.setUploadTime(DateUtils.getNowString(DateUtils.yyyyMMddHHmmss.get()));
+        appVersionInfo.setDownloadUrl(fileName);
+    }
+
     @ResponseBody
     @RequestMapping(value = "/addAppVersion", method = RequestMethod.POST)
     public ApiResult addAppVersion(MultipartFile file, AppVersionInfo appVersionInfo) {
@@ -117,11 +128,7 @@ public class UpdateController {
                 try {
                     String fileName = fileService.storeFile(file);
                     if (!StringUtils.isEmpty(fileName)) {  //更新apk信息
-                        File apkFile = fileService.loadFileAsResource(fileName).getFile();
-                        newVersion.setApkMd5(Md5Utils.getFileMD5(apkFile));
-                        newVersion.setApkSize(FileUtils.getApkFileSize(apkFile));
-                        newVersion.setUploadTime(DateUtils.getNowString(DateUtils.yyyyMMddHHmmss.get()));
-                        newVersion.setDownloadUrl(fileName);
+                        updateVersionInfo(fileName, newVersion);
 
                         if (updateService.updateAppVersionInfo(newVersion)) {
                             return apiResult.setData("版本信息添加成功!" );
