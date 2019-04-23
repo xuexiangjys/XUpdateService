@@ -28,7 +28,7 @@ CREATE TABLE `account` (
   `password` varchar(45) NOT NULL DEFAULT '123456',
   `nick` varchar(45) NOT NULL DEFAULT 'admin',
   `authority` varchar(45) NOT NULL DEFAULT 'admin',
-  `avatar` varchar(60) DEFAULT NULL,
+  `avatar` varchar(200) DEFAULT NULL,
   `phone` char(11) DEFAULT NULL,
   `address` varchar(60) DEFAULT NULL,
   `register_time` datetime DEFAULT NULL,
@@ -44,7 +44,7 @@ CREATE TABLE `account` (
 
 LOCK TABLES `account` WRITE;
 /*!40000 ALTER TABLE `account` DISABLE KEYS */;
-INSERT INTO `account` VALUES (1,'admin','123456','admin','admin',NULL,'13513957542','南京市江宁区','2018-05-06 00:00:00'),(2,'xuexiang','123456','薛翔','admin',NULL,'13913845875','南京市江宁区','2018-12-11 00:00:00');
+INSERT INTO `account` VALUES (1,'admin','123456','admin','admin','https://wpimg.wallstcn.com/f778738c-e4f8-4870-b634-56703b4acafe.gif','13513957542','南京市江宁区','2018-05-06 00:00:00'),(2,'xuexiang','123456','薛翔','admin','https://raw.githubusercontent.com/xuexiangjys/Resource/master/img/avatar/avatar_github.jpg','13913845875','南京市江宁区','2018-12-11 00:00:00');
 /*!40000 ALTER TABLE `account` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -89,4 +89,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-04-22 14:58:07
+-- Dump completed on 2019-04-23  9:19:39
