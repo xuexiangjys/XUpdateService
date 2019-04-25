@@ -1,5 +1,6 @@
 package com.xuexiang.xupdateservice.service;
 
+import com.xuexiang.xupdateservice.api.response.PageData;
 import com.xuexiang.xupdateservice.model.AppVersionInfo;
 
 import java.util.List;
@@ -38,14 +39,14 @@ public interface UpdateService {
      * @param appKey
      * @return
      */
-    List<AppVersionInfo> getAppVersionInfo(String appKey);
+    List<AppVersionInfo> getAllAppVersionInfo(String appKey);
 
     /**
      * 获取所有应用的版本信息
      *
      * @return
      */
-    List<AppVersionInfo> getAppVersionInfo();
+    List<AppVersionInfo> getAllAppVersionInfo();
 
     /**
      * 分页查询所有应用的版本信息
@@ -54,7 +55,7 @@ public interface UpdateService {
      * @param pageSize
      * @return
      */
-    List<AppVersionInfo> getAppVersionInfo(int pageNum, int pageSize);
+    PageData<AppVersionInfo> getAllAppVersionInfo(int pageNum, int pageSize);
 
     /**
      * 根据appKey和versionCode获取唯一的版本信息

@@ -1,5 +1,6 @@
 package com.xuexiang.xupdateservice.service;
 
+import com.xuexiang.xupdateservice.api.response.PageData;
 import com.xuexiang.xupdateservice.model.Account;
 
 import java.util.List;
@@ -19,7 +20,7 @@ public interface AccountService {
      * @param pageSize 每页的数量
      * @return
      */
-    List<Account> getAllAccount(int pageNum, int pageSize);
+    PageData<Account> getAllAccount(int pageNum, int pageSize);
 
     /**
      * 查询所有账户信息

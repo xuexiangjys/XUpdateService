@@ -1,6 +1,8 @@
 package com.xuexiang.xupdateservice.service.impl;
 
+import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
+import com.xuexiang.xupdateservice.api.response.PageData;
 import com.xuexiang.xupdateservice.mapper.AccountMapper;
 import com.xuexiang.xupdateservice.model.Account;
 import com.xuexiang.xupdateservice.service.AccountService;
@@ -22,9 +24,14 @@ public class AccountServiceImpl implements AccountService {
     private AccountMapper accountMapper;
 
     @Override
-    public List<Account> getAllAccount(int pageNum, int pageSize) {
-        PageHelper.startPage(pageNum, pageSize);
-        return accountMapper.selectAll();
+    public PageData<Account> getAllAccount(int pageNum, int pageSize) {
+        PageData<Account> pageData = new PageData<>();
+        Page<Account> page = PageHelper.startPage(pageNum, pageSize);
+        pageData.setArray(accountMapper.selectAll());
+        pageData.setPageNum(page.getPageNum())
+                .setPageSize(page.getPageSize())
+                .setTotal(page.getTotal());
+        return pageData;
     }
 
     @Override

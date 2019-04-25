@@ -1,6 +1,8 @@
 package com.xuexiang.xupdateservice.service.impl;
 
+import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
+import com.xuexiang.xupdateservice.api.response.PageData;
 import com.xuexiang.xupdateservice.mapper.AppVersionInfoMapper;
 import com.xuexiang.xupdateservice.model.AppVersionInfo;
 import com.xuexiang.xupdateservice.service.UpdateService;
@@ -24,7 +26,7 @@ public class UpdateServiceImpl implements UpdateService {
 
     @Override
     public AppVersionInfo getLatestAppVersionInfo(int versionCode, String appKey) {
-        List<AppVersionInfo> appInfos = getAppVersionInfo(appKey);
+        List<AppVersionInfo> appInfos = getAllAppVersionInfo(appKey);
 
         if (appInfos.size() > 0) {
             AppVersionInfo appVersionInfo = appInfos.get(0); //获取到最新的版本
@@ -39,7 +41,7 @@ public class UpdateServiceImpl implements UpdateService {
     }
 
     @Override
-    public List<AppVersionInfo> getAppVersionInfo(String appKey) {
+    public List<AppVersionInfo> getAllAppVersionInfo(String appKey) {
         Condition condition = new Condition(AppVersionInfo.class);
         condition.createCriteria().andEqualTo("appKey", appKey);
         condition.setOrderByClause("version_code desc"); //根据版本号降序
@@ -47,21 +49,26 @@ public class UpdateServiceImpl implements UpdateService {
     }
 
     @Override
-    public List<AppVersionInfo> getAppVersionInfo() {
+    public List<AppVersionInfo> getAllAppVersionInfo() {
         return appVersionInfoMapper.selectAll();
     }
 
     /*
-     * 这个方法中用到了我们开头配置依赖的分页插件pagehelper
+     * 这个方法中用到了我们开头配置依赖的分页插件PageHelper
      * 很简单，只需要在service层传入参数，然后将参数传递给一个插件的一个静态方法即可；
      * pageNum 开始页数
      * pageSize 每页显示的数据条数
      * */
     @Override
-    public List<AppVersionInfo> getAppVersionInfo(int pageNum, int pageSize) {
+    public PageData<AppVersionInfo> getAllAppVersionInfo(int pageNum, int pageSize) {
         //将参数传给这个方法就可以实现物理分页了，非常简单。
-        PageHelper.startPage(pageNum, pageSize);
-        return appVersionInfoMapper.selectAll();
+        PageData<AppVersionInfo> pageData = new PageData<>();
+        Page<AppVersionInfo> page = PageHelper.startPage(pageNum, pageSize);
+        pageData.setArray(appVersionInfoMapper.selectAll());
+        pageData.setPageNum(page.getPageNum())
+                .setPageSize(page.getPageSize())
+                .setTotal(page.getTotal());
+        return pageData;
     }
 
     @Override

@@ -1,5 +1,6 @@
 package com.xuexiang.xupdateservice.controller;
 
+import com.xuexiang.xupdateservice.api.request.PageQuery;
 import com.xuexiang.xupdateservice.api.response.ApiResult;
 import com.xuexiang.xupdateservice.api.response.LoginInfo;
 import com.xuexiang.xupdateservice.component.annotation.CurrentAccount;
@@ -27,6 +28,12 @@ public class AccountController {
 
     @Autowired
     private AccountService accountService;
+
+    @ResponseBody
+    @RequestMapping(value = "/accountPageQuery", method = RequestMethod.POST)
+    public ApiResult pageQueryAccounts(@RequestBody PageQuery pageQuery) throws Exception {
+        return new ApiResult<>().setData(accountService.getAllAccount(pageQuery.pageNum, pageQuery.pageSize));
+    }
 
     @ResponseBody
     @RequestMapping(value = "/accounts", method = RequestMethod.GET)

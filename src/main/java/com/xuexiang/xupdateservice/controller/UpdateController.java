@@ -1,5 +1,6 @@
 package com.xuexiang.xupdateservice.controller;
 
+import com.xuexiang.xupdateservice.api.request.PageQuery;
 import com.xuexiang.xupdateservice.api.response.ApiResult;
 import com.xuexiang.xupdateservice.model.AppVersionInfo;
 import com.xuexiang.xupdateservice.service.FileStorageService;
@@ -21,7 +22,6 @@ import org.springframework.web.multipart.MultipartFile;
 import javax.servlet.http.HttpServletRequest;
 import java.io.File;
 import java.io.IOException;
-import java.util.List;
 
 /**
  * 版本更新api
@@ -49,9 +49,15 @@ public class UpdateController {
     }
 
     @ResponseBody
+    @RequestMapping(value = "/versionPageQuery", method = RequestMethod.POST)
+    public ApiResult pageQueryVersions(@RequestBody PageQuery pageQuery) {
+        return new ApiResult<>().setData(updateService.getAllAppVersionInfo(pageQuery.pageNum, pageQuery.pageSize));
+    }
+
+    @ResponseBody
     @RequestMapping(value = "/versions", method = RequestMethod.GET)
     public ApiResult getAllVersions() {
-        return new ApiResult<List<AppVersionInfo>>().setData(updateService.getAppVersionInfo());
+        return new ApiResult<>().setData(updateService.getAllAppVersionInfo());
     }
 
     @ResponseBody
