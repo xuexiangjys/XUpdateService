@@ -2,11 +2,10 @@ package com.xuexiang.xupdateservice.utils;
 
 import com.xuexiang.xupdateservice.component.annotation.LimitedRequest;
 import com.xuexiang.xupdateservice.component.annotation.QuickRequest;
-
-import java.util.HashMap;
 import java.util.Map;
 import java.util.Timer;
 import java.util.TimerTask;
+import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * 快速请求工具类
@@ -22,12 +21,12 @@ public final class QuickRequestUtils {
     /**
      * 存放请求的次数
      */
-    private static Map<String, Integer> sRequestCount = new HashMap<>();
+    private static Map<String, Integer> sRequestCount = new ConcurrentHashMap<>();
 
     /**
      * 存放请求的时间戳
      */
-    private static Map<String, Long> sRequestTimeStamp = new HashMap<>();
+    private static Map<String, Long> sRequestTimeStamp = new ConcurrentHashMap<>();
 
     /**
      * 是否是快速请求
