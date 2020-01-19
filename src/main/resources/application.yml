@@ -25,8 +25,8 @@ spring:
         maxOpenPreparedStatements: 20
     http:
         multipart:
-            max-file-size: 10MB
-            max-request-size: 100MB
+            max-file-size: 100MB
+            max-request-size: 1000MB
     servlet:
         multipart:
             enabled: true
