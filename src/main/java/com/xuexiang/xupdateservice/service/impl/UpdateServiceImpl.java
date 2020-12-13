@@ -33,10 +33,14 @@ public class UpdateServiceImpl implements UpdateService {
             if (appVersionInfo.getVersionCode() > versionCode) { //最新版本大，需要更新
                 return appVersionInfo;
             } else {
-                return new AppVersionInfo().setUpdateStatus(UpdateService.NO_NEW_VERSION);
+                AppVersionInfo appInfo = new AppVersionInfo();
+                appInfo.setUpdateStatus(UpdateService.NO_NEW_VERSION);
+                return appInfo;
             }
         } else {
-            return new AppVersionInfo().setUpdateStatus(UpdateService.NO_NEW_VERSION);
+            AppVersionInfo appInfo = new AppVersionInfo();
+            appInfo.setUpdateStatus(UpdateService.NO_NEW_VERSION);
+            return appInfo;
         }
     }
 

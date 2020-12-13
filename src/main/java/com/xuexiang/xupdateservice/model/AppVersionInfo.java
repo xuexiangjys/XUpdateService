@@ -35,93 +35,143 @@ public class AppVersionInfo {
     @Column(name = "apk_md5")
     private String apkMd5;
 
+    /**
+     * @return version_id
+     */
     public Integer getVersionId() {
         return versionId;
     }
 
-    public AppVersionInfo setVersionId(Integer versionId) {
+    /**
+     * @param versionId
+     */
+    public void setVersionId(Integer versionId) {
         this.versionId = versionId;
-        return this;
     }
 
+    /**
+     * @return update_status
+     */
     public Integer getUpdateStatus() {
         return updateStatus;
     }
 
-    public AppVersionInfo setUpdateStatus(Integer updateStatus) {
+    /**
+     * @param updateStatus
+     */
+    public void setUpdateStatus(Integer updateStatus) {
         this.updateStatus = updateStatus;
-        return this;
     }
 
+    /**
+     * @return version_code
+     */
     public Integer getVersionCode() {
         return versionCode;
     }
 
-    public AppVersionInfo setVersionCode(Integer versionCode) {
+    /**
+     * @param versionCode
+     */
+    public void setVersionCode(Integer versionCode) {
         this.versionCode = versionCode;
-        return this;
     }
 
+    /**
+     * @return version_name
+     */
     public String getVersionName() {
         return versionName;
     }
 
-    public AppVersionInfo setVersionName(String versionName) {
+    /**
+     * @param versionName
+     */
+    public void setVersionName(String versionName) {
         this.versionName = versionName;
-        return this;
     }
 
+    /**
+     * @return upload_time
+     */
     public String getUploadTime() {
         return uploadTime;
     }
 
-    public AppVersionInfo setUploadTime(String uploadTime) {
+    /**
+     * @param uploadTime
+     */
+    public void setUploadTime(String uploadTime) {
         this.uploadTime = uploadTime;
-        return this;
     }
 
+    /**
+     * @return apk_size
+     */
     public Integer getApkSize() {
         return apkSize;
     }
 
-    public AppVersionInfo setApkSize(Integer apkSize) {
+    /**
+     * @param apkSize
+     */
+    public void setApkSize(Integer apkSize) {
         this.apkSize = apkSize;
-        return this;
     }
 
+    /**
+     * @return app_key
+     */
     public String getAppKey() {
         return appKey;
     }
 
-    public AppVersionInfo setAppKey(String appKey) {
+    /**
+     * @param appKey
+     */
+    public void setAppKey(String appKey) {
         this.appKey = appKey;
-        return this;
     }
 
+    /**
+     * @return modify_content
+     */
     public String getModifyContent() {
         return modifyContent;
     }
 
-    public AppVersionInfo setModifyContent(String modifyContent) {
+    /**
+     * @param modifyContent
+     */
+    public void setModifyContent(String modifyContent) {
         this.modifyContent = modifyContent;
-        return this;
     }
 
+    /**
+     * @return download_url
+     */
     public String getDownloadUrl() {
         return downloadUrl;
     }
 
-    public AppVersionInfo setDownloadUrl(String downloadUrl) {
+    /**
+     * @param downloadUrl
+     */
+    public void setDownloadUrl(String downloadUrl) {
         this.downloadUrl = downloadUrl;
-        return this;
     }
 
+    /**
+     * @return apk_md5
+     */
     public String getApkMd5() {
         return apkMd5;
     }
 
-    public AppVersionInfo setApkMd5(String apkMd5) {
+    /**
+     * @param apkMd5
+     */
+    public void setApkMd5(String apkMd5) {
         this.apkMd5 = apkMd5;
-        return this;
     }
 }

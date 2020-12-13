@@ -27,84 +27,129 @@ public class Account {
     @Column(name = "register_time")
     private Date registerTime;
 
+    /**
+     * @return account_id
+     */
     public Integer getAccountId() {
         return accountId;
     }
 
-    public Account setAccountId(Integer accountId) {
+    /**
+     * @param accountId
+     */
+    public void setAccountId(Integer accountId) {
         this.accountId = accountId;
-        return this;
     }
 
+    /**
+     * @return login_name
+     */
     public String getLoginName() {
         return loginName;
     }
 
-    public Account setLoginName(String loginName) {
+    /**
+     * @param loginName
+     */
+    public void setLoginName(String loginName) {
         this.loginName = loginName;
-        return this;
     }
 
+    /**
+     * @return password
+     */
     public String getPassword() {
         return password;
     }
 
-    public Account setPassword(String password) {
+    /**
+     * @param password
+     */
+    public void setPassword(String password) {
         this.password = password;
-        return this;
     }
 
+    /**
+     * @return nick
+     */
     public String getNick() {
         return nick;
     }
 
-    public Account setNick(String nick) {
+    /**
+     * @param nick
+     */
+    public void setNick(String nick) {
         this.nick = nick;
-        return this;
     }
 
+    /**
+     * @return authority
+     */
     public String getAuthority() {
         return authority;
     }
 
-    public Account setAuthority(String authority) {
+    /**
+     * @param authority
+     */
+    public void setAuthority(String authority) {
         this.authority = authority;
-        return this;
     }
 
+    /**
+     * @return avatar
+     */
     public String getAvatar() {
         return avatar;
     }
 
-    public Account setAvatar(String avatar) {
+    /**
+     * @param avatar
+     */
+    public void setAvatar(String avatar) {
         this.avatar = avatar;
-        return this;
     }
 
+    /**
+     * @return phone
+     */
     public String getPhone() {
         return phone;
     }
 
-    public Account setPhone(String phone) {
+    /**
+     * @param phone
+     */
+    public void setPhone(String phone) {
         this.phone = phone;
-        return this;
     }
 
+    /**
+     * @return address
+     */
     public String getAddress() {
         return address;
     }
 
-    public Account setAddress(String address) {
+    /**
+     * @param address
+     */
+    public void setAddress(String address) {
         this.address = address;
-        return this;
     }
 
+    /**
+     * @return register_time
+     */
     public Date getRegisterTime() {
         return registerTime;
     }
 
-    public Account setRegisterTime(Date registerTime) {
+    /**
+     * @param registerTime
+     */
+    public void setRegisterTime(Date registerTime) {
         this.registerTime = registerTime;
-        return this;
     }
 }

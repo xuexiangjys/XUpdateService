@@ -5,7 +5,7 @@ def getDbProperties = {
     }
     properties;
 }
-task mybatisGenerate << {
+task mybatisGenerate {
     def properties = getDbProperties()
     ant.properties['targetProject'] = projectDir.path
     ant.properties['classPath'] = properties.getProperty("classPath")

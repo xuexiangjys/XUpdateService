@@ -42,25 +42,21 @@ git clone https://github.com/xuexiangjys/XUpdateService.git
 
 4.直接运行`XUpdateServiceApplication`即可运行服务。
 
-5.在浏览器中输入`http://localhost:1111/`即可打开版本更新管理界面。
-
-![](https://github.com/xuexiangjys/XUpdateService/blob/master/img/demo.png)
-
 ## 程序打包
 
-1.执行`./gradlew bootRepackage`或点击Gradle任务栏点击`bootRepackage`，如下图：
-
-![](https://github.com/xuexiangjys/XUpdateService/blob/master/img/1.png)
+1.执行`./gradlew bootJar`或点击Gradle任务栏点击`Tasks` -> `Build` -> `bootJar`.
 
 2.打包后的是jar文件，打包路径：`build/libs/` 下，如下图：
 
 ![](https://github.com/xuexiangjys/XUpdateService/blob/master/img/2.png)
 
-3.最后执行jar包即可
+3.最后执行jar包即可.
 
 ```
 java -jar build/libs/xxxxx.jar
 ```
+
+4.目前最新的已打包好的jar在项目的`Package`下[xupdateservice-1.0.0.jar](./package/xupdateservice-1.0.0.jar), 运行前请保证你的数据库连接正常。
 
 ## 版本更新管理后台
 
