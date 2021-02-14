@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xuexiang.xupdateservice.mapper.InnodbTrxMapper">
+  <resultMap id="BaseResultMap" type="com.xuexiang.xupdateservice.model.InnodbTrx">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <result column="trx_id" jdbcType="BIGINT" property="trxId" />
+    <result column="trx_state" jdbcType="VARCHAR" property="trxState" />
+    <result column="trx_started" jdbcType="TIMESTAMP" property="trxStarted" />
+    <result column="trx_requested_lock_id" jdbcType="VARCHAR" property="trxRequestedLockId" />
+    <result column="trx_wait_started" jdbcType="TIMESTAMP" property="trxWaitStarted" />
+    <result column="trx_weight" jdbcType="BIGINT" property="trxWeight" />
+    <result column="trx_mysql_thread_id" jdbcType="BIGINT" property="trxMysqlThreadId" />
+    <result column="trx_query" jdbcType="VARCHAR" property="trxQuery" />
+    <result column="trx_operation_state" jdbcType="VARCHAR" property="trxOperationState" />
+    <result column="trx_tables_in_use" jdbcType="BIGINT" property="trxTablesInUse" />
+    <result column="trx_tables_locked" jdbcType="BIGINT" property="trxTablesLocked" />
+    <result column="trx_lock_structs" jdbcType="BIGINT" property="trxLockStructs" />
+    <result column="trx_lock_memory_bytes" jdbcType="BIGINT" property="trxLockMemoryBytes" />
+    <result column="trx_rows_locked" jdbcType="BIGINT" property="trxRowsLocked" />
+    <result column="trx_rows_modified" jdbcType="BIGINT" property="trxRowsModified" />
+    <result column="trx_concurrency_tickets" jdbcType="BIGINT" property="trxConcurrencyTickets" />
+    <result column="trx_isolation_level" jdbcType="VARCHAR" property="trxIsolationLevel" />
+    <result column="trx_unique_checks" jdbcType="INTEGER" property="trxUniqueChecks" />
+    <result column="trx_foreign_key_checks" jdbcType="INTEGER" property="trxForeignKeyChecks" />
+    <result column="trx_last_foreign_key_error" jdbcType="VARCHAR" property="trxLastForeignKeyError" />
+    <result column="trx_adaptive_hash_latched" jdbcType="INTEGER" property="trxAdaptiveHashLatched" />
+    <result column="trx_adaptive_hash_timeout" jdbcType="BIGINT" property="trxAdaptiveHashTimeout" />
+    <result column="trx_is_read_only" jdbcType="INTEGER" property="trxIsReadOnly" />
+    <result column="trx_autocommit_non_locking" jdbcType="INTEGER" property="trxAutocommitNonLocking" />
+    <result column="trx_schedule_weight" jdbcType="BIGINT" property="trxScheduleWeight" />
+  </resultMap>
+</mapper>

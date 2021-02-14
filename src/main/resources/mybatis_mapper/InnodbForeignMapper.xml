@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xuexiang.xupdateservice.mapper.InnodbForeignMapper">
+  <resultMap id="BaseResultMap" type="com.xuexiang.xupdateservice.model.InnodbForeign">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <result column="ID" jdbcType="VARCHAR" property="id" />
+    <result column="FOR_NAME" jdbcType="VARCHAR" property="forName" />
+    <result column="REF_NAME" jdbcType="VARCHAR" property="refName" />
+    <result column="N_COLS" jdbcType="BIGINT" property="nCols" />
+    <result column="TYPE" jdbcType="BIGINT" property="type" />
+  </resultMap>
+</mapper>

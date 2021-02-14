@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xuexiang.xupdateservice.mapper.RoutinesMapper">
+  <resultMap id="BaseResultMap" type="com.xuexiang.xupdateservice.model.Routines">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <result column="SPECIFIC_NAME" jdbcType="VARCHAR" property="specificName" />
+    <result column="ROUTINE_CATALOG" jdbcType="VARCHAR" property="routineCatalog" />
+    <result column="ROUTINE_SCHEMA" jdbcType="VARCHAR" property="routineSchema" />
+    <result column="ROUTINE_NAME" jdbcType="VARCHAR" property="routineName" />
+    <result column="ROUTINE_TYPE" jdbcType="CHAR" property="routineType" />
+    <result column="CHARACTER_MAXIMUM_LENGTH" jdbcType="BIGINT" property="characterMaximumLength" />
+    <result column="CHARACTER_OCTET_LENGTH" jdbcType="BIGINT" property="characterOctetLength" />
+    <result column="NUMERIC_PRECISION" jdbcType="INTEGER" property="numericPrecision" />
+    <result column="NUMERIC_SCALE" jdbcType="INTEGER" property="numericScale" />
+    <result column="DATETIME_PRECISION" jdbcType="INTEGER" property="datetimePrecision" />
+    <result column="CHARACTER_SET_NAME" jdbcType="VARCHAR" property="characterSetName" />
+    <result column="COLLATION_NAME" jdbcType="VARCHAR" property="collationName" />
+    <result column="ROUTINE_BODY" jdbcType="VARCHAR" property="routineBody" />
+    <result column="EXTERNAL_LANGUAGE" jdbcType="VARCHAR" property="externalLanguage" />
+    <result column="PARAMETER_STYLE" jdbcType="VARCHAR" property="parameterStyle" />
+    <result column="IS_DETERMINISTIC" jdbcType="VARCHAR" property="isDeterministic" />
+    <result column="SQL_DATA_ACCESS" jdbcType="CHAR" property="sqlDataAccess" />
+    <result column="SECURITY_TYPE" jdbcType="CHAR" property="securityType" />
+    <result column="CREATED" jdbcType="TIMESTAMP" property="created" />
+    <result column="LAST_ALTERED" jdbcType="TIMESTAMP" property="lastAltered" />
+    <result column="SQL_MODE" jdbcType="CHAR" property="sqlMode" />
+    <result column="DEFINER" jdbcType="VARCHAR" property="definer" />
+    <result column="CHARACTER_SET_CLIENT" jdbcType="VARCHAR" property="characterSetClient" />
+    <result column="COLLATION_CONNECTION" jdbcType="VARCHAR" property="collationConnection" />
+    <result column="DATABASE_COLLATION" jdbcType="VARCHAR" property="databaseCollation" />
+    <result column="DATA_TYPE" jdbcType="LONGVARCHAR" property="dataType" />
+    <result column="DTD_IDENTIFIER" jdbcType="LONGVARCHAR" property="dtdIdentifier" />
+    <result column="ROUTINE_DEFINITION" jdbcType="LONGVARCHAR" property="routineDefinition" />
+    <result column="EXTERNAL_NAME" jdbcType="BINARY" property="externalName" />
+    <result column="SQL_PATH" jdbcType="BINARY" property="sqlPath" />
+    <result column="ROUTINE_COMMENT" jdbcType="LONGVARCHAR" property="routineComment" />
+  </resultMap>
+</mapper>

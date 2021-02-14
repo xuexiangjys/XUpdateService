@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xuexiang.xupdateservice.mapper.OptimizerTraceMapper">
+  <resultMap id="BaseResultMap" type="com.xuexiang.xupdateservice.model.OptimizerTrace">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <result column="QUERY" jdbcType="VARCHAR" property="query" />
+    <result column="TRACE" jdbcType="VARCHAR" property="trace" />
+    <result column="MISSING_BYTES_BEYOND_MAX_MEM_SIZE" jdbcType="INTEGER" property="missingBytesBeyondMaxMemSize" />
+    <result column="INSUFFICIENT_PRIVILEGES" jdbcType="BIT" property="insufficientPrivileges" />
+  </resultMap>
+</mapper>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xuexiang.xupdateservice.mapper.KeyColumnUsageMapper">
+  <resultMap id="BaseResultMap" type="com.xuexiang.xupdateservice.model.KeyColumnUsage">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <result column="CONSTRAINT_CATALOG" jdbcType="VARCHAR" property="constraintCatalog" />
+    <result column="CONSTRAINT_SCHEMA" jdbcType="VARCHAR" property="constraintSchema" />
+    <result column="CONSTRAINT_NAME" jdbcType="VARCHAR" property="constraintName" />
+    <result column="TABLE_CATALOG" jdbcType="VARCHAR" property="tableCatalog" />
+    <result column="TABLE_SCHEMA" jdbcType="VARCHAR" property="tableSchema" />
+    <result column="TABLE_NAME" jdbcType="VARCHAR" property="tableName" />
+    <result column="COLUMN_NAME" jdbcType="VARCHAR" property="columnName" />
+    <result column="ORDINAL_POSITION" jdbcType="INTEGER" property="ordinalPosition" />
+    <result column="POSITION_IN_UNIQUE_CONSTRAINT" jdbcType="INTEGER" property="positionInUniqueConstraint" />
+    <result column="REFERENCED_TABLE_SCHEMA" jdbcType="VARCHAR" property="referencedTableSchema" />
+    <result column="REFERENCED_TABLE_NAME" jdbcType="VARCHAR" property="referencedTableName" />
+    <result column="REFERENCED_COLUMN_NAME" jdbcType="VARCHAR" property="referencedColumnName" />
+  </resultMap>
+</mapper>

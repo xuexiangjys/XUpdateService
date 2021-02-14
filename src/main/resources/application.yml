@@ -4,9 +4,9 @@ server:
 spring:
     datasource:
         name: XUpdateService
-        url: jdbc:mysql://localhost:3306/xupdate?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true
-        username: root
-        password: 123456
+        url: jdbc:mysql://127.0.0.1:3306/xupdate?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true&serverTimezone=GMT
+        username: xupdate
+        password: xupdate123
         # 使用druid数据源
         type: com.alibaba.druid.pool.DruidDataSource
         driver-class-name: com.mysql.cj.jdbc.Driver

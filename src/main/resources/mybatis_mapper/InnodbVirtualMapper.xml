@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xuexiang.xupdateservice.mapper.InnodbVirtualMapper">
+  <resultMap id="BaseResultMap" type="com.xuexiang.xupdateservice.model.InnodbVirtual">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <result column="TABLE_ID" jdbcType="BIGINT" property="tableId" />
+    <result column="POS" jdbcType="INTEGER" property="pos" />
+    <result column="BASE_POS" jdbcType="INTEGER" property="basePos" />
+  </resultMap>
+</mapper>

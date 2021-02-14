@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xuexiang.xupdateservice.mapper.InnodbTablestatsMapper">
+  <resultMap id="BaseResultMap" type="com.xuexiang.xupdateservice.model.InnodbTablestats">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <result column="TABLE_ID" jdbcType="BIGINT" property="tableId" />
+    <result column="NAME" jdbcType="VARCHAR" property="name" />
+    <result column="STATS_INITIALIZED" jdbcType="VARCHAR" property="statsInitialized" />
+    <result column="NUM_ROWS" jdbcType="BIGINT" property="numRows" />
+    <result column="CLUST_INDEX_SIZE" jdbcType="BIGINT" property="clustIndexSize" />
+    <result column="OTHER_INDEX_SIZE" jdbcType="BIGINT" property="otherIndexSize" />
+    <result column="MODIFIED_COUNTER" jdbcType="BIGINT" property="modifiedCounter" />
+    <result column="AUTOINC" jdbcType="BIGINT" property="autoinc" />
+    <result column="REF_COUNT" jdbcType="INTEGER" property="refCount" />
+  </resultMap>
+</mapper>

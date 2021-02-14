@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xuexiang.xupdateservice.mapper.ViewsMapper">
+  <resultMap id="BaseResultMap" type="com.xuexiang.xupdateservice.model.Views">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <result column="TABLE_CATALOG" jdbcType="VARCHAR" property="tableCatalog" />
+    <result column="TABLE_SCHEMA" jdbcType="VARCHAR" property="tableSchema" />
+    <result column="TABLE_NAME" jdbcType="VARCHAR" property="tableName" />
+    <result column="CHECK_OPTION" jdbcType="CHAR" property="checkOption" />
+    <result column="IS_UPDATABLE" jdbcType="CHAR" property="isUpdatable" />
+    <result column="DEFINER" jdbcType="VARCHAR" property="definer" />
+    <result column="SECURITY_TYPE" jdbcType="VARCHAR" property="securityType" />
+    <result column="CHARACTER_SET_CLIENT" jdbcType="VARCHAR" property="characterSetClient" />
+    <result column="COLLATION_CONNECTION" jdbcType="VARCHAR" property="collationConnection" />
+    <result column="VIEW_DEFINITION" jdbcType="LONGVARCHAR" property="viewDefinition" />
+  </resultMap>
+</mapper>

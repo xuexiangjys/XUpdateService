@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xuexiang.xupdateservice.mapper.ResourceGroupsMapper">
+  <resultMap id="BaseResultMap" type="com.xuexiang.xupdateservice.model.ResourceGroups">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <result column="RESOURCE_GROUP_NAME" jdbcType="VARCHAR" property="resourceGroupName" />
+    <result column="RESOURCE_GROUP_TYPE" jdbcType="CHAR" property="resourceGroupType" />
+    <result column="RESOURCE_GROUP_ENABLED" jdbcType="BIT" property="resourceGroupEnabled" />
+    <result column="THREAD_PRIORITY" jdbcType="INTEGER" property="threadPriority" />
+    <result column="VCPU_IDS" jdbcType="LONGVARBINARY" property="vcpuIds" />
+  </resultMap>
+</mapper>

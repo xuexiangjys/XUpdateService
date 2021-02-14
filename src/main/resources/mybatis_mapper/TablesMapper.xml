@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xuexiang.xupdateservice.mapper.TablesMapper">
+  <resultMap id="BaseResultMap" type="com.xuexiang.xupdateservice.model.Tables">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <result column="TABLE_CATALOG" jdbcType="VARCHAR" property="tableCatalog" />
+    <result column="TABLE_SCHEMA" jdbcType="VARCHAR" property="tableSchema" />
+    <result column="TABLE_NAME" jdbcType="VARCHAR" property="tableName" />
+    <result column="TABLE_TYPE" jdbcType="CHAR" property="tableType" />
+    <result column="ENGINE" jdbcType="VARCHAR" property="engine" />
+    <result column="VERSION" jdbcType="INTEGER" property="version" />
+    <result column="ROW_FORMAT" jdbcType="CHAR" property="rowFormat" />
+    <result column="TABLE_ROWS" jdbcType="BIGINT" property="tableRows" />
+    <result column="AVG_ROW_LENGTH" jdbcType="BIGINT" property="avgRowLength" />
+    <result column="DATA_LENGTH" jdbcType="BIGINT" property="dataLength" />
+    <result column="MAX_DATA_LENGTH" jdbcType="BIGINT" property="maxDataLength" />
+    <result column="INDEX_LENGTH" jdbcType="BIGINT" property="indexLength" />
+    <result column="DATA_FREE" jdbcType="BIGINT" property="dataFree" />
+    <result column="AUTO_INCREMENT" jdbcType="BIGINT" property="autoIncrement" />
+    <result column="CREATE_TIME" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="UPDATE_TIME" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="CHECK_TIME" jdbcType="TIMESTAMP" property="checkTime" />
+    <result column="TABLE_COLLATION" jdbcType="VARCHAR" property="tableCollation" />
+    <result column="CHECKSUM" jdbcType="BIGINT" property="checksum" />
+    <result column="CREATE_OPTIONS" jdbcType="VARCHAR" property="createOptions" />
+    <result column="TABLE_COMMENT" jdbcType="LONGVARCHAR" property="tableComment" />
+  </resultMap>
+</mapper>

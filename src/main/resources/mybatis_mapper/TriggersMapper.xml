@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xuexiang.xupdateservice.mapper.TriggersMapper">
+  <resultMap id="BaseResultMap" type="com.xuexiang.xupdateservice.model.Triggers">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <result column="TRIGGER_CATALOG" jdbcType="VARCHAR" property="triggerCatalog" />
+    <result column="TRIGGER_SCHEMA" jdbcType="VARCHAR" property="triggerSchema" />
+    <result column="TRIGGER_NAME" jdbcType="VARCHAR" property="triggerName" />
+    <result column="EVENT_MANIPULATION" jdbcType="CHAR" property="eventManipulation" />
+    <result column="EVENT_OBJECT_CATALOG" jdbcType="VARCHAR" property="eventObjectCatalog" />
+    <result column="EVENT_OBJECT_SCHEMA" jdbcType="VARCHAR" property="eventObjectSchema" />
+    <result column="EVENT_OBJECT_TABLE" jdbcType="VARCHAR" property="eventObjectTable" />
+    <result column="ACTION_ORDER" jdbcType="INTEGER" property="actionOrder" />
+    <result column="ACTION_ORIENTATION" jdbcType="VARCHAR" property="actionOrientation" />
+    <result column="ACTION_TIMING" jdbcType="CHAR" property="actionTiming" />
+    <result column="ACTION_REFERENCE_OLD_ROW" jdbcType="VARCHAR" property="actionReferenceOldRow" />
+    <result column="ACTION_REFERENCE_NEW_ROW" jdbcType="VARCHAR" property="actionReferenceNewRow" />
+    <result column="CREATED" jdbcType="TIMESTAMP" property="created" />
+    <result column="SQL_MODE" jdbcType="CHAR" property="sqlMode" />
+    <result column="DEFINER" jdbcType="VARCHAR" property="definer" />
+    <result column="CHARACTER_SET_CLIENT" jdbcType="VARCHAR" property="characterSetClient" />
+    <result column="COLLATION_CONNECTION" jdbcType="VARCHAR" property="collationConnection" />
+    <result column="DATABASE_COLLATION" jdbcType="VARCHAR" property="databaseCollation" />
+    <result column="ACTION_CONDITION" jdbcType="BINARY" property="actionCondition" />
+    <result column="ACTION_STATEMENT" jdbcType="LONGVARCHAR" property="actionStatement" />
+    <result column="ACTION_REFERENCE_OLD_TABLE" jdbcType="BINARY" property="actionReferenceOldTable" />
+    <result column="ACTION_REFERENCE_NEW_TABLE" jdbcType="BINARY" property="actionReferenceNewTable" />
+  </resultMap>
+</mapper>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xuexiang.xupdateservice.mapper.RoleTableGrantsMapper">
+  <resultMap id="BaseResultMap" type="com.xuexiang.xupdateservice.model.RoleTableGrants">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <result column="GRANTOR" jdbcType="VARCHAR" property="grantor" />
+    <result column="GRANTOR_HOST" jdbcType="VARCHAR" property="grantorHost" />
+    <result column="GRANTEE" jdbcType="CHAR" property="grantee" />
+    <result column="GRANTEE_HOST" jdbcType="CHAR" property="granteeHost" />
+    <result column="TABLE_CATALOG" jdbcType="VARCHAR" property="tableCatalog" />
+    <result column="TABLE_SCHEMA" jdbcType="CHAR" property="tableSchema" />
+    <result column="TABLE_NAME" jdbcType="CHAR" property="tableName" />
+    <result column="PRIVILEGE_TYPE" jdbcType="CHAR" property="privilegeType" />
+    <result column="IS_GRANTABLE" jdbcType="VARCHAR" property="isGrantable" />
+  </resultMap>
+</mapper>

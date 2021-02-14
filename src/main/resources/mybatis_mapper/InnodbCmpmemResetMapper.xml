@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xuexiang.xupdateservice.mapper.InnodbCmpmemResetMapper">
+  <resultMap id="BaseResultMap" type="com.xuexiang.xupdateservice.model.InnodbCmpmemReset">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <result column="page_size" jdbcType="INTEGER" property="pageSize" />
+    <result column="buffer_pool_instance" jdbcType="INTEGER" property="bufferPoolInstance" />
+    <result column="pages_used" jdbcType="INTEGER" property="pagesUsed" />
+    <result column="pages_free" jdbcType="INTEGER" property="pagesFree" />
+    <result column="relocation_ops" jdbcType="BIGINT" property="relocationOps" />
+    <result column="relocation_time" jdbcType="INTEGER" property="relocationTime" />
+  </resultMap>
+</mapper>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xuexiang.xupdateservice.mapper.InnodbBufferPageLruMapper">
+  <resultMap id="BaseResultMap" type="com.xuexiang.xupdateservice.model.InnodbBufferPageLru">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <result column="POOL_ID" jdbcType="BIGINT" property="poolId" />
+    <result column="LRU_POSITION" jdbcType="BIGINT" property="lruPosition" />
+    <result column="SPACE" jdbcType="BIGINT" property="space" />
+    <result column="PAGE_NUMBER" jdbcType="BIGINT" property="pageNumber" />
+    <result column="PAGE_TYPE" jdbcType="VARCHAR" property="pageType" />
+    <result column="FLUSH_TYPE" jdbcType="BIGINT" property="flushType" />
+    <result column="FIX_COUNT" jdbcType="BIGINT" property="fixCount" />
+    <result column="IS_HASHED" jdbcType="VARCHAR" property="isHashed" />
+    <result column="NEWEST_MODIFICATION" jdbcType="BIGINT" property="newestModification" />
+    <result column="OLDEST_MODIFICATION" jdbcType="BIGINT" property="oldestModification" />
+    <result column="ACCESS_TIME" jdbcType="BIGINT" property="accessTime" />
+    <result column="TABLE_NAME" jdbcType="VARCHAR" property="tableName" />
+    <result column="INDEX_NAME" jdbcType="VARCHAR" property="indexName" />
+    <result column="NUMBER_RECORDS" jdbcType="BIGINT" property="numberRecords" />
+    <result column="DATA_SIZE" jdbcType="BIGINT" property="dataSize" />
+    <result column="COMPRESSED_SIZE" jdbcType="BIGINT" property="compressedSize" />
+    <result column="COMPRESSED" jdbcType="VARCHAR" property="compressed" />
+    <result column="IO_FIX" jdbcType="VARCHAR" property="ioFix" />
+    <result column="IS_OLD" jdbcType="VARCHAR" property="isOld" />
+    <result column="FREE_PAGE_CLOCK" jdbcType="BIGINT" property="freePageClock" />
+  </resultMap>
+</mapper>

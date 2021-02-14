@@ -27,7 +27,7 @@ dependencies {
 
     //数据库连接
     implementation('org.springframework.boot:spring-boot-starter-jdbc')
-    implementation 'mysql:mysql-connector-java:8.0.22'
+    implementation 'mysql:mysql-connector-java:8.0.23'
     implementation 'com.alibaba:fastjson:1.2.75'
     implementation 'com.alibaba:druid:1.2.4'
     implementation 'com.alibaba:druid-spring-boot-starter:1.2.4'

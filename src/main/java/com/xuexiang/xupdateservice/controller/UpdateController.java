@@ -2,6 +2,7 @@ package com.xuexiang.xupdateservice.controller;
 
 import com.xuexiang.xupdateservice.api.request.PageQuery;
 import com.xuexiang.xupdateservice.api.response.ApiResult;
+import com.xuexiang.xupdateservice.api.response.XUpdateAPI;
 import com.xuexiang.xupdateservice.model.AppVersionInfo;
 import com.xuexiang.xupdateservice.service.FileStorageService;
 import com.xuexiang.xupdateservice.service.UpdateService;
@@ -42,10 +43,25 @@ public class UpdateController {
     @Autowired
     private FileStorageService fileService;
 
+    @Autowired
+    private HttpServletRequest request;
+
     @ResponseBody
     @RequestMapping(value = "/checkVersion", method = RequestMethod.POST)
     public ApiResult doCheckVersion(int versionCode, String appKey) {
         return new ApiResult<AppVersionInfo>().setData(updateService.getLatestAppVersionInfo(versionCode, appKey));
+    }
+
+    @ResponseBody
+    @RequestMapping(value = "/checkVersion", method = RequestMethod.GET)
+    public XUpdateAPI doCheckVersionGet(int versionCode, String appKey) {
+        String scheme = request.getScheme();
+        String url = scheme + "://" + request.getServerName();
+        int port = request.getServerPort();
+        if ((scheme == "http" && port != 80) || (scheme == "https" && port != 443)) {
+            url += ":" + port;
+        }
+        return new XUpdateAPI<AppVersionInfo>().setData(url, updateService.getLatestAppVersionInfo(versionCode, appKey));
     }
 
     @ResponseBody
@@ -86,6 +102,7 @@ public class UpdateController {
 
     /**
      * 添加新版本
+     *
      * @param appVersionInfo
      * @return
      */
@@ -158,7 +175,7 @@ public class UpdateController {
                         updateVersionInfo(fileName, newVersion);
 
                         if (updateService.updateAppVersionInfo(newVersion)) {
-                            return apiResult.setData("版本信息添加成功!" );
+                            return apiResult.setData("版本信息添加成功!");
                         } else {
                             return getOnErrorApiResult(apiResult, "Apk信息添加失败!");
                         }

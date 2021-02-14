@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xuexiang.xupdateservice.mapper.InnodbSessionTempTablespacesMapper">
+  <resultMap id="BaseResultMap" type="com.xuexiang.xupdateservice.model.InnodbSessionTempTablespaces">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <result column="ID" jdbcType="INTEGER" property="id" />
+    <result column="SPACE" jdbcType="INTEGER" property="space" />
+    <result column="PATH" jdbcType="VARCHAR" property="path" />
+    <result column="SIZE" jdbcType="BIGINT" property="size" />
+    <result column="STATE" jdbcType="VARCHAR" property="state" />
+    <result column="PURPOSE" jdbcType="VARCHAR" property="purpose" />
+  </resultMap>
+</mapper>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xuexiang.xupdateservice.mapper.ProfilingMapper">
+  <resultMap id="BaseResultMap" type="com.xuexiang.xupdateservice.model.Profiling">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <result column="QUERY_ID" jdbcType="INTEGER" property="queryId" />
+    <result column="SEQ" jdbcType="INTEGER" property="seq" />
+    <result column="STATE" jdbcType="VARCHAR" property="state" />
+    <result column="DURATION" jdbcType="DECIMAL" property="duration" />
+    <result column="CPU_USER" jdbcType="DECIMAL" property="cpuUser" />
+    <result column="CPU_SYSTEM" jdbcType="DECIMAL" property="cpuSystem" />
+    <result column="CONTEXT_VOLUNTARY" jdbcType="INTEGER" property="contextVoluntary" />
+    <result column="CONTEXT_INVOLUNTARY" jdbcType="INTEGER" property="contextInvoluntary" />
+    <result column="BLOCK_OPS_IN" jdbcType="INTEGER" property="blockOpsIn" />
+    <result column="BLOCK_OPS_OUT" jdbcType="INTEGER" property="blockOpsOut" />
+    <result column="MESSAGES_SENT" jdbcType="INTEGER" property="messagesSent" />
+    <result column="MESSAGES_RECEIVED" jdbcType="INTEGER" property="messagesReceived" />
+    <result column="PAGE_FAULTS_MAJOR" jdbcType="INTEGER" property="pageFaultsMajor" />
+    <result column="PAGE_FAULTS_MINOR" jdbcType="INTEGER" property="pageFaultsMinor" />
+    <result column="SWAPS" jdbcType="INTEGER" property="swaps" />
+    <result column="SOURCE_FUNCTION" jdbcType="VARCHAR" property="sourceFunction" />
+    <result column="SOURCE_FILE" jdbcType="VARCHAR" property="sourceFile" />
+    <result column="SOURCE_LINE" jdbcType="INTEGER" property="sourceLine" />
+  </resultMap>
+</mapper>

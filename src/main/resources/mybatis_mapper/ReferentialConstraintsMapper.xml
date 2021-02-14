@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xuexiang.xupdateservice.mapper.ReferentialConstraintsMapper">
+  <resultMap id="BaseResultMap" type="com.xuexiang.xupdateservice.model.ReferentialConstraints">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <result column="CONSTRAINT_CATALOG" jdbcType="VARCHAR" property="constraintCatalog" />
+    <result column="CONSTRAINT_SCHEMA" jdbcType="VARCHAR" property="constraintSchema" />
+    <result column="CONSTRAINT_NAME" jdbcType="VARCHAR" property="constraintName" />
+    <result column="UNIQUE_CONSTRAINT_CATALOG" jdbcType="VARCHAR" property="uniqueConstraintCatalog" />
+    <result column="UNIQUE_CONSTRAINT_SCHEMA" jdbcType="VARCHAR" property="uniqueConstraintSchema" />
+    <result column="UNIQUE_CONSTRAINT_NAME" jdbcType="VARCHAR" property="uniqueConstraintName" />
+    <result column="MATCH_OPTION" jdbcType="CHAR" property="matchOption" />
+    <result column="UPDATE_RULE" jdbcType="CHAR" property="updateRule" />
+    <result column="DELETE_RULE" jdbcType="CHAR" property="deleteRule" />
+    <result column="TABLE_NAME" jdbcType="VARCHAR" property="tableName" />
+    <result column="REFERENCED_TABLE_NAME" jdbcType="VARCHAR" property="referencedTableName" />
+  </resultMap>
+</mapper>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xuexiang.xupdateservice.mapper.InnodbTablespacesMapper">
+  <resultMap id="BaseResultMap" type="com.xuexiang.xupdateservice.model.InnodbTablespaces">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <result column="SPACE" jdbcType="INTEGER" property="space" />
+    <result column="NAME" jdbcType="VARCHAR" property="name" />
+    <result column="FLAG" jdbcType="INTEGER" property="flag" />
+    <result column="ROW_FORMAT" jdbcType="VARCHAR" property="rowFormat" />
+    <result column="PAGE_SIZE" jdbcType="INTEGER" property="pageSize" />
+    <result column="ZIP_PAGE_SIZE" jdbcType="INTEGER" property="zipPageSize" />
+    <result column="SPACE_TYPE" jdbcType="VARCHAR" property="spaceType" />
+    <result column="FS_BLOCK_SIZE" jdbcType="INTEGER" property="fsBlockSize" />
+    <result column="FILE_SIZE" jdbcType="BIGINT" property="fileSize" />
+    <result column="ALLOCATED_SIZE" jdbcType="BIGINT" property="allocatedSize" />
+    <result column="SERVER_VERSION" jdbcType="VARCHAR" property="serverVersion" />
+    <result column="SPACE_VERSION" jdbcType="INTEGER" property="spaceVersion" />
+    <result column="ENCRYPTION" jdbcType="VARCHAR" property="encryption" />
+    <result column="STATE" jdbcType="VARCHAR" property="state" />
+  </resultMap>
+</mapper>

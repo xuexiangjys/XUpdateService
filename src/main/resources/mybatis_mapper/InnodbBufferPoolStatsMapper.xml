@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xuexiang.xupdateservice.mapper.InnodbBufferPoolStatsMapper">
+  <resultMap id="BaseResultMap" type="com.xuexiang.xupdateservice.model.InnodbBufferPoolStats">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <result column="POOL_ID" jdbcType="BIGINT" property="poolId" />
+    <result column="POOL_SIZE" jdbcType="BIGINT" property="poolSize" />
+    <result column="FREE_BUFFERS" jdbcType="BIGINT" property="freeBuffers" />
+    <result column="DATABASE_PAGES" jdbcType="BIGINT" property="databasePages" />
+    <result column="OLD_DATABASE_PAGES" jdbcType="BIGINT" property="oldDatabasePages" />
+    <result column="MODIFIED_DATABASE_PAGES" jdbcType="BIGINT" property="modifiedDatabasePages" />
+    <result column="PENDING_DECOMPRESS" jdbcType="BIGINT" property="pendingDecompress" />
+    <result column="PENDING_READS" jdbcType="BIGINT" property="pendingReads" />
+    <result column="PENDING_FLUSH_LRU" jdbcType="BIGINT" property="pendingFlushLru" />
+    <result column="PENDING_FLUSH_LIST" jdbcType="BIGINT" property="pendingFlushList" />
+    <result column="PAGES_MADE_YOUNG" jdbcType="BIGINT" property="pagesMadeYoung" />
+    <result column="PAGES_NOT_MADE_YOUNG" jdbcType="BIGINT" property="pagesNotMadeYoung" />
+    <result column="PAGES_MADE_YOUNG_RATE" jdbcType="REAL" property="pagesMadeYoungRate" />
+    <result column="PAGES_MADE_NOT_YOUNG_RATE" jdbcType="REAL" property="pagesMadeNotYoungRate" />
+    <result column="NUMBER_PAGES_READ" jdbcType="BIGINT" property="numberPagesRead" />
+    <result column="NUMBER_PAGES_CREATED" jdbcType="BIGINT" property="numberPagesCreated" />
+    <result column="NUMBER_PAGES_WRITTEN" jdbcType="BIGINT" property="numberPagesWritten" />
+    <result column="PAGES_READ_RATE" jdbcType="REAL" property="pagesReadRate" />
+    <result column="PAGES_CREATE_RATE" jdbcType="REAL" property="pagesCreateRate" />
+    <result column="PAGES_WRITTEN_RATE" jdbcType="REAL" property="pagesWrittenRate" />
+    <result column="NUMBER_PAGES_GET" jdbcType="BIGINT" property="numberPagesGet" />
+    <result column="HIT_RATE" jdbcType="BIGINT" property="hitRate" />
+    <result column="YOUNG_MAKE_PER_THOUSAND_GETS" jdbcType="BIGINT" property="youngMakePerThousandGets" />
+    <result column="NOT_YOUNG_MAKE_PER_THOUSAND_GETS" jdbcType="BIGINT" property="notYoungMakePerThousandGets" />
+    <result column="NUMBER_PAGES_READ_AHEAD" jdbcType="BIGINT" property="numberPagesReadAhead" />
+    <result column="NUMBER_READ_AHEAD_EVICTED" jdbcType="BIGINT" property="numberReadAheadEvicted" />
+    <result column="READ_AHEAD_RATE" jdbcType="REAL" property="readAheadRate" />
+    <result column="READ_AHEAD_EVICTED_RATE" jdbcType="REAL" property="readAheadEvictedRate" />
+    <result column="LRU_IO_TOTAL" jdbcType="BIGINT" property="lruIoTotal" />
+    <result column="LRU_IO_CURRENT" jdbcType="BIGINT" property="lruIoCurrent" />
+    <result column="UNCOMPRESS_TOTAL" jdbcType="BIGINT" property="uncompressTotal" />
+    <result column="UNCOMPRESS_CURRENT" jdbcType="BIGINT" property="uncompressCurrent" />
+  </resultMap>
+</mapper>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xuexiang.xupdateservice.mapper.EnginesMapper">
+  <resultMap id="BaseResultMap" type="com.xuexiang.xupdateservice.model.Engines">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <result column="ENGINE" jdbcType="VARCHAR" property="engine" />
+    <result column="SUPPORT" jdbcType="VARCHAR" property="support" />
+    <result column="COMMENT" jdbcType="VARCHAR" property="comment" />
+    <result column="TRANSACTIONS" jdbcType="VARCHAR" property="transactions" />
+    <result column="XA" jdbcType="VARCHAR" property="xa" />
+    <result column="SAVEPOINTS" jdbcType="VARCHAR" property="savepoints" />
+  </resultMap>
+</mapper>

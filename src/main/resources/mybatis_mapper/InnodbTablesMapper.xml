@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xuexiang.xupdateservice.mapper.InnodbTablesMapper">
+  <resultMap id="BaseResultMap" type="com.xuexiang.xupdateservice.model.InnodbTables">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <result column="TABLE_ID" jdbcType="BIGINT" property="tableId" />
+    <result column="NAME" jdbcType="VARCHAR" property="name" />
+    <result column="FLAG" jdbcType="INTEGER" property="flag" />
+    <result column="N_COLS" jdbcType="INTEGER" property="nCols" />
+    <result column="SPACE" jdbcType="BIGINT" property="space" />
+    <result column="ROW_FORMAT" jdbcType="VARCHAR" property="rowFormat" />
+    <result column="ZIP_PAGE_SIZE" jdbcType="INTEGER" property="zipPageSize" />
+    <result column="SPACE_TYPE" jdbcType="VARCHAR" property="spaceType" />
+    <result column="INSTANT_COLS" jdbcType="INTEGER" property="instantCols" />
+  </resultMap>
+</mapper>

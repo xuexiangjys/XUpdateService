@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xuexiang.xupdateservice.mapper.InnodbForeignColsMapper">
+  <resultMap id="BaseResultMap" type="com.xuexiang.xupdateservice.model.InnodbForeignCols">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <result column="ID" jdbcType="VARCHAR" property="id" />
+    <result column="FOR_COL_NAME" jdbcType="VARCHAR" property="forColName" />
+    <result column="REF_COL_NAME" jdbcType="VARCHAR" property="refColName" />
+    <result column="POS" jdbcType="INTEGER" property="pos" />
+  </resultMap>
+</mapper>

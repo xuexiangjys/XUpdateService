@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xuexiang.xupdateservice.mapper.TablespacesMapper">
+  <resultMap id="BaseResultMap" type="com.xuexiang.xupdateservice.model.Tablespaces">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <result column="TABLESPACE_NAME" jdbcType="VARCHAR" property="tablespaceName" />
+    <result column="ENGINE" jdbcType="VARCHAR" property="engine" />
+    <result column="TABLESPACE_TYPE" jdbcType="VARCHAR" property="tablespaceType" />
+    <result column="LOGFILE_GROUP_NAME" jdbcType="VARCHAR" property="logfileGroupName" />
+    <result column="EXTENT_SIZE" jdbcType="BIGINT" property="extentSize" />
+    <result column="AUTOEXTEND_SIZE" jdbcType="BIGINT" property="autoextendSize" />
+    <result column="MAXIMUM_SIZE" jdbcType="BIGINT" property="maximumSize" />
+    <result column="NODEGROUP_ID" jdbcType="BIGINT" property="nodegroupId" />
+    <result column="TABLESPACE_COMMENT" jdbcType="VARCHAR" property="tablespaceComment" />
+  </resultMap>
+</mapper>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xuexiang.xupdateservice.mapper.InnodbTablespacesBriefMapper">
+  <resultMap id="BaseResultMap" type="com.xuexiang.xupdateservice.model.InnodbTablespacesBrief">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <result column="NAME" jdbcType="VARCHAR" property="name" />
+    <result column="PATH" jdbcType="VARCHAR" property="path" />
+    <result column="SPACE_TYPE" jdbcType="VARCHAR" property="spaceType" />
+    <result column="SPACE" jdbcType="VARBINARY" property="space" />
+    <result column="FLAG" jdbcType="VARBINARY" property="flag" />
+  </resultMap>
+</mapper>

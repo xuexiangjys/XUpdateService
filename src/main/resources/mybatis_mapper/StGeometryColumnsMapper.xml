@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xuexiang.xupdateservice.mapper.StGeometryColumnsMapper">
+  <resultMap id="BaseResultMap" type="com.xuexiang.xupdateservice.model.StGeometryColumns">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <result column="TABLE_CATALOG" jdbcType="VARCHAR" property="tableCatalog" />
+    <result column="TABLE_SCHEMA" jdbcType="VARCHAR" property="tableSchema" />
+    <result column="TABLE_NAME" jdbcType="VARCHAR" property="tableName" />
+    <result column="COLUMN_NAME" jdbcType="VARCHAR" property="columnName" />
+    <result column="SRS_NAME" jdbcType="VARCHAR" property="srsName" />
+    <result column="SRS_ID" jdbcType="INTEGER" property="srsId" />
+    <result column="GEOMETRY_TYPE_NAME" jdbcType="LONGVARCHAR" property="geometryTypeName" />
+  </resultMap>
+</mapper>

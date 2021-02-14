@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xuexiang.xupdateservice.mapper.InnodbCmpPerIndexMapper">
+  <resultMap id="BaseResultMap" type="com.xuexiang.xupdateservice.model.InnodbCmpPerIndex">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <result column="database_name" jdbcType="VARCHAR" property="databaseName" />
+    <result column="table_name" jdbcType="VARCHAR" property="tableName" />
+    <result column="index_name" jdbcType="VARCHAR" property="indexName" />
+    <result column="compress_ops" jdbcType="INTEGER" property="compressOps" />
+    <result column="compress_ops_ok" jdbcType="INTEGER" property="compressOpsOk" />
+    <result column="compress_time" jdbcType="INTEGER" property="compressTime" />
+    <result column="uncompress_ops" jdbcType="INTEGER" property="uncompressOps" />
+    <result column="uncompress_time" jdbcType="INTEGER" property="uncompressTime" />
+  </resultMap>
+</mapper>

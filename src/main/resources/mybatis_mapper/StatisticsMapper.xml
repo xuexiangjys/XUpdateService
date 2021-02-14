@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xuexiang.xupdateservice.mapper.StatisticsMapper">
+  <resultMap id="BaseResultMap" type="com.xuexiang.xupdateservice.model.Statistics">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <result column="TABLE_CATALOG" jdbcType="VARCHAR" property="tableCatalog" />
+    <result column="TABLE_SCHEMA" jdbcType="VARCHAR" property="tableSchema" />
+    <result column="TABLE_NAME" jdbcType="VARCHAR" property="tableName" />
+    <result column="NON_UNIQUE" jdbcType="INTEGER" property="nonUnique" />
+    <result column="INDEX_SCHEMA" jdbcType="VARCHAR" property="indexSchema" />
+    <result column="INDEX_NAME" jdbcType="VARCHAR" property="indexName" />
+    <result column="SEQ_IN_INDEX" jdbcType="INTEGER" property="seqInIndex" />
+    <result column="COLUMN_NAME" jdbcType="VARCHAR" property="columnName" />
+    <result column="COLLATION" jdbcType="VARCHAR" property="collation" />
+    <result column="CARDINALITY" jdbcType="BIGINT" property="cardinality" />
+    <result column="SUB_PART" jdbcType="BIGINT" property="subPart" />
+    <result column="NULLABLE" jdbcType="VARCHAR" property="nullable" />
+    <result column="INDEX_TYPE" jdbcType="VARCHAR" property="indexType" />
+    <result column="COMMENT" jdbcType="VARCHAR" property="comment" />
+    <result column="INDEX_COMMENT" jdbcType="VARCHAR" property="indexComment" />
+    <result column="IS_VISIBLE" jdbcType="VARCHAR" property="isVisible" />
+    <result column="PACKED" jdbcType="BINARY" property="packed" />
+    <result column="EXPRESSION" jdbcType="LONGVARCHAR" property="expression" />
+  </resultMap>
+</mapper>

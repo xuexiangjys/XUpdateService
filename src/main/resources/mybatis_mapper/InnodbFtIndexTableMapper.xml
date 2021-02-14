@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xuexiang.xupdateservice.mapper.InnodbFtIndexTableMapper">
+  <resultMap id="BaseResultMap" type="com.xuexiang.xupdateservice.model.InnodbFtIndexTable">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <result column="WORD" jdbcType="VARCHAR" property="word" />
+    <result column="FIRST_DOC_ID" jdbcType="BIGINT" property="firstDocId" />
+    <result column="LAST_DOC_ID" jdbcType="BIGINT" property="lastDocId" />
+    <result column="DOC_COUNT" jdbcType="BIGINT" property="docCount" />
+    <result column="DOC_ID" jdbcType="BIGINT" property="docId" />
+    <result column="POSITION" jdbcType="BIGINT" property="position" />
+  </resultMap>
+</mapper>

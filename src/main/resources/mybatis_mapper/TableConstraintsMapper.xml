@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xuexiang.xupdateservice.mapper.TableConstraintsMapper">
+  <resultMap id="BaseResultMap" type="com.xuexiang.xupdateservice.model.TableConstraints">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <result column="CONSTRAINT_CATALOG" jdbcType="VARCHAR" property="constraintCatalog" />
+    <result column="CONSTRAINT_SCHEMA" jdbcType="VARCHAR" property="constraintSchema" />
+    <result column="CONSTRAINT_NAME" jdbcType="VARCHAR" property="constraintName" />
+    <result column="TABLE_SCHEMA" jdbcType="VARCHAR" property="tableSchema" />
+    <result column="TABLE_NAME" jdbcType="VARCHAR" property="tableName" />
+    <result column="CONSTRAINT_TYPE" jdbcType="VARCHAR" property="constraintType" />
+    <result column="ENFORCED" jdbcType="VARCHAR" property="enforced" />
+  </resultMap>
+</mapper>

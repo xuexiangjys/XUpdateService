@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xuexiang.xupdateservice.mapper.FilesMapper">
+  <resultMap id="BaseResultMap" type="com.xuexiang.xupdateservice.model.Files">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <result column="FILE_ID" jdbcType="BIGINT" property="fileId" />
+    <result column="FILE_TYPE" jdbcType="VARCHAR" property="fileType" />
+    <result column="TABLESPACE_NAME" jdbcType="VARCHAR" property="tablespaceName" />
+    <result column="TABLE_CATALOG" jdbcType="CHAR" property="tableCatalog" />
+    <result column="LOGFILE_GROUP_NAME" jdbcType="VARCHAR" property="logfileGroupName" />
+    <result column="LOGFILE_GROUP_NUMBER" jdbcType="BIGINT" property="logfileGroupNumber" />
+    <result column="ENGINE" jdbcType="VARCHAR" property="engine" />
+    <result column="FREE_EXTENTS" jdbcType="BIGINT" property="freeExtents" />
+    <result column="TOTAL_EXTENTS" jdbcType="BIGINT" property="totalExtents" />
+    <result column="EXTENT_SIZE" jdbcType="BIGINT" property="extentSize" />
+    <result column="INITIAL_SIZE" jdbcType="BIGINT" property="initialSize" />
+    <result column="MAXIMUM_SIZE" jdbcType="BIGINT" property="maximumSize" />
+    <result column="AUTOEXTEND_SIZE" jdbcType="BIGINT" property="autoextendSize" />
+    <result column="VERSION" jdbcType="BIGINT" property="version" />
+    <result column="ROW_FORMAT" jdbcType="VARCHAR" property="rowFormat" />
+    <result column="DATA_FREE" jdbcType="BIGINT" property="dataFree" />
+    <result column="STATUS" jdbcType="VARCHAR" property="status" />
+    <result column="EXTRA" jdbcType="VARCHAR" property="extra" />
+    <result column="FILE_NAME" jdbcType="LONGVARCHAR" property="fileName" />
+    <result column="TABLE_SCHEMA" jdbcType="BINARY" property="tableSchema" />
+    <result column="TABLE_NAME" jdbcType="BINARY" property="tableName" />
+    <result column="FULLTEXT_KEYS" jdbcType="BINARY" property="fulltextKeys" />
+    <result column="DELETED_ROWS" jdbcType="BINARY" property="deletedRows" />
+    <result column="UPDATE_COUNT" jdbcType="BINARY" property="updateCount" />
+    <result column="CREATION_TIME" jdbcType="BINARY" property="creationTime" />
+    <result column="LAST_UPDATE_TIME" jdbcType="BINARY" property="lastUpdateTime" />
+    <result column="LAST_ACCESS_TIME" jdbcType="BINARY" property="lastAccessTime" />
+    <result column="RECOVER_TIME" jdbcType="BINARY" property="recoverTime" />
+    <result column="TRANSACTION_COUNTER" jdbcType="BINARY" property="transactionCounter" />
+    <result column="TABLE_ROWS" jdbcType="BINARY" property="tableRows" />
+    <result column="AVG_ROW_LENGTH" jdbcType="BINARY" property="avgRowLength" />
+    <result column="DATA_LENGTH" jdbcType="BINARY" property="dataLength" />
+    <result column="MAX_DATA_LENGTH" jdbcType="BINARY" property="maxDataLength" />
+    <result column="INDEX_LENGTH" jdbcType="BINARY" property="indexLength" />
+    <result column="CREATE_TIME" jdbcType="BINARY" property="createTime" />
+    <result column="UPDATE_TIME" jdbcType="BINARY" property="updateTime" />
+    <result column="CHECK_TIME" jdbcType="BINARY" property="checkTime" />
+    <result column="CHECKSUM" jdbcType="BINARY" property="checksum" />
+  </resultMap>
+</mapper>

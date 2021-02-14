@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xuexiang.xupdateservice.mapper.InnodbCachedIndexesMapper">
+  <resultMap id="BaseResultMap" type="com.xuexiang.xupdateservice.model.InnodbCachedIndexes">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <result column="SPACE_ID" jdbcType="INTEGER" property="spaceId" />
+    <result column="INDEX_ID" jdbcType="BIGINT" property="indexId" />
+    <result column="N_CACHED_PAGES" jdbcType="BIGINT" property="nCachedPages" />
+  </resultMap>
+</mapper>

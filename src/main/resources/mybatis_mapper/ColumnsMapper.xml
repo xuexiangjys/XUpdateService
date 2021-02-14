@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xuexiang.xupdateservice.mapper.ColumnsMapper">
+  <resultMap id="BaseResultMap" type="com.xuexiang.xupdateservice.model.Columns">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <result column="TABLE_CATALOG" jdbcType="VARCHAR" property="tableCatalog" />
+    <result column="TABLE_SCHEMA" jdbcType="VARCHAR" property="tableSchema" />
+    <result column="TABLE_NAME" jdbcType="VARCHAR" property="tableName" />
+    <result column="COLUMN_NAME" jdbcType="VARCHAR" property="columnName" />
+    <result column="ORDINAL_POSITION" jdbcType="INTEGER" property="ordinalPosition" />
+    <result column="IS_NULLABLE" jdbcType="VARCHAR" property="isNullable" />
+    <result column="CHARACTER_MAXIMUM_LENGTH" jdbcType="BIGINT" property="characterMaximumLength" />
+    <result column="CHARACTER_OCTET_LENGTH" jdbcType="BIGINT" property="characterOctetLength" />
+    <result column="NUMERIC_PRECISION" jdbcType="BIGINT" property="numericPrecision" />
+    <result column="NUMERIC_SCALE" jdbcType="BIGINT" property="numericScale" />
+    <result column="DATETIME_PRECISION" jdbcType="INTEGER" property="datetimePrecision" />
+    <result column="CHARACTER_SET_NAME" jdbcType="VARCHAR" property="characterSetName" />
+    <result column="COLLATION_NAME" jdbcType="VARCHAR" property="collationName" />
+    <result column="COLUMN_KEY" jdbcType="CHAR" property="columnKey" />
+    <result column="EXTRA" jdbcType="VARCHAR" property="extra" />
+    <result column="PRIVILEGES" jdbcType="VARCHAR" property="privileges" />
+    <result column="SRS_ID" jdbcType="INTEGER" property="srsId" />
+    <result column="COLUMN_DEFAULT" jdbcType="LONGVARCHAR" property="columnDefault" />
+    <result column="DATA_TYPE" jdbcType="LONGVARCHAR" property="dataType" />
+    <result column="COLUMN_TYPE" jdbcType="LONGVARCHAR" property="columnType" />
+    <result column="COLUMN_COMMENT" jdbcType="LONGVARCHAR" property="columnComment" />
+    <result column="GENERATION_EXPRESSION" jdbcType="LONGVARCHAR" property="generationExpression" />
+  </resultMap>
+</mapper>

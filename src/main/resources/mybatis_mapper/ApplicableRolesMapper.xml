@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xuexiang.xupdateservice.mapper.ApplicableRolesMapper">
+  <resultMap id="BaseResultMap" type="com.xuexiang.xupdateservice.model.ApplicableRoles">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <result column="USER" jdbcType="VARCHAR" property="user" />
+    <result column="HOST" jdbcType="VARCHAR" property="host" />
+    <result column="GRANTEE" jdbcType="VARCHAR" property="grantee" />
+    <result column="GRANTEE_HOST" jdbcType="VARCHAR" property="granteeHost" />
+    <result column="ROLE_NAME" jdbcType="VARCHAR" property="roleName" />
+    <result column="ROLE_HOST" jdbcType="VARCHAR" property="roleHost" />
+    <result column="IS_GRANTABLE" jdbcType="VARCHAR" property="isGrantable" />
+    <result column="IS_DEFAULT" jdbcType="VARCHAR" property="isDefault" />
+    <result column="IS_MANDATORY" jdbcType="VARCHAR" property="isMandatory" />
+  </resultMap>
+</mapper>

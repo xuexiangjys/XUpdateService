@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xuexiang.xupdateservice.mapper.InnodbMetricsMapper">
+  <resultMap id="BaseResultMap" type="com.xuexiang.xupdateservice.model.InnodbMetrics">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <result column="NAME" jdbcType="VARCHAR" property="name" />
+    <result column="SUBSYSTEM" jdbcType="VARCHAR" property="subsystem" />
+    <result column="COUNT" jdbcType="BIGINT" property="count" />
+    <result column="MAX_COUNT" jdbcType="BIGINT" property="maxCount" />
+    <result column="MIN_COUNT" jdbcType="BIGINT" property="minCount" />
+    <result column="AVG_COUNT" jdbcType="REAL" property="avgCount" />
+    <result column="COUNT_RESET" jdbcType="BIGINT" property="countReset" />
+    <result column="MAX_COUNT_RESET" jdbcType="BIGINT" property="maxCountReset" />
+    <result column="MIN_COUNT_RESET" jdbcType="BIGINT" property="minCountReset" />
+    <result column="AVG_COUNT_RESET" jdbcType="REAL" property="avgCountReset" />
+    <result column="TIME_ENABLED" jdbcType="TIMESTAMP" property="timeEnabled" />
+    <result column="TIME_DISABLED" jdbcType="TIMESTAMP" property="timeDisabled" />
+    <result column="TIME_ELAPSED" jdbcType="BIGINT" property="timeElapsed" />
+    <result column="TIME_RESET" jdbcType="TIMESTAMP" property="timeReset" />
+    <result column="STATUS" jdbcType="VARCHAR" property="status" />
+    <result column="TYPE" jdbcType="VARCHAR" property="type" />
+    <result column="COMMENT" jdbcType="VARCHAR" property="comment" />
+  </resultMap>
+</mapper>

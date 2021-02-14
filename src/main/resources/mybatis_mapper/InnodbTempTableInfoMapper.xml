@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xuexiang.xupdateservice.mapper.InnodbTempTableInfoMapper">
+  <resultMap id="BaseResultMap" type="com.xuexiang.xupdateservice.model.InnodbTempTableInfo">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <result column="TABLE_ID" jdbcType="BIGINT" property="tableId" />
+    <result column="NAME" jdbcType="VARCHAR" property="name" />
+    <result column="N_COLS" jdbcType="INTEGER" property="nCols" />
+    <result column="SPACE" jdbcType="INTEGER" property="space" />
+  </resultMap>
+</mapper>

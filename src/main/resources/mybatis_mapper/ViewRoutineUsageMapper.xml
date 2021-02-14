@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xuexiang.xupdateservice.mapper.ViewRoutineUsageMapper">
+  <resultMap id="BaseResultMap" type="com.xuexiang.xupdateservice.model.ViewRoutineUsage">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <result column="TABLE_CATALOG" jdbcType="VARCHAR" property="tableCatalog" />
+    <result column="TABLE_SCHEMA" jdbcType="VARCHAR" property="tableSchema" />
+    <result column="TABLE_NAME" jdbcType="VARCHAR" property="tableName" />
+    <result column="SPECIFIC_CATALOG" jdbcType="VARCHAR" property="specificCatalog" />
+    <result column="SPECIFIC_SCHEMA" jdbcType="VARCHAR" property="specificSchema" />
+    <result column="SPECIFIC_NAME" jdbcType="VARCHAR" property="specificName" />
+  </resultMap>
+</mapper>

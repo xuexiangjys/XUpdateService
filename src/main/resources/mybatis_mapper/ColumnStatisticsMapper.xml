@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xuexiang.xupdateservice.mapper.ColumnStatisticsMapper">
+  <resultMap id="BaseResultMap" type="com.xuexiang.xupdateservice.model.ColumnStatistics">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <result column="SCHEMA_NAME" jdbcType="VARCHAR" property="schemaName" />
+    <result column="TABLE_NAME" jdbcType="VARCHAR" property="tableName" />
+    <result column="COLUMN_NAME" jdbcType="VARCHAR" property="columnName" />
+    <result column="HISTOGRAM" jdbcType="LONGVARCHAR" property="histogram" />
+  </resultMap>
+</mapper>

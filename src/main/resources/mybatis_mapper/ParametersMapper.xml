@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xuexiang.xupdateservice.mapper.ParametersMapper">
+  <resultMap id="BaseResultMap" type="com.xuexiang.xupdateservice.model.Parameters">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <result column="SPECIFIC_CATALOG" jdbcType="VARCHAR" property="specificCatalog" />
+    <result column="SPECIFIC_SCHEMA" jdbcType="VARCHAR" property="specificSchema" />
+    <result column="SPECIFIC_NAME" jdbcType="VARCHAR" property="specificName" />
+    <result column="ORDINAL_POSITION" jdbcType="BIGINT" property="ordinalPosition" />
+    <result column="PARAMETER_MODE" jdbcType="VARCHAR" property="parameterMode" />
+    <result column="PARAMETER_NAME" jdbcType="VARCHAR" property="parameterName" />
+    <result column="CHARACTER_MAXIMUM_LENGTH" jdbcType="BIGINT" property="characterMaximumLength" />
+    <result column="CHARACTER_OCTET_LENGTH" jdbcType="BIGINT" property="characterOctetLength" />
+    <result column="NUMERIC_PRECISION" jdbcType="INTEGER" property="numericPrecision" />
+    <result column="NUMERIC_SCALE" jdbcType="BIGINT" property="numericScale" />
+    <result column="DATETIME_PRECISION" jdbcType="INTEGER" property="datetimePrecision" />
+    <result column="CHARACTER_SET_NAME" jdbcType="VARCHAR" property="characterSetName" />
+    <result column="COLLATION_NAME" jdbcType="VARCHAR" property="collationName" />
+    <result column="ROUTINE_TYPE" jdbcType="CHAR" property="routineType" />
+    <result column="DATA_TYPE" jdbcType="LONGVARCHAR" property="dataType" />
+    <result column="DTD_IDENTIFIER" jdbcType="LONGVARCHAR" property="dtdIdentifier" />
+  </resultMap>
+</mapper>

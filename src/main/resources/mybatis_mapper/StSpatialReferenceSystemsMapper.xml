@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xuexiang.xupdateservice.mapper.StSpatialReferenceSystemsMapper">
+  <resultMap id="BaseResultMap" type="com.xuexiang.xupdateservice.model.StSpatialReferenceSystems">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <result column="SRS_NAME" jdbcType="VARCHAR" property="srsName" />
+    <result column="SRS_ID" jdbcType="INTEGER" property="srsId" />
+    <result column="ORGANIZATION" jdbcType="VARCHAR" property="organization" />
+    <result column="ORGANIZATION_COORDSYS_ID" jdbcType="INTEGER" property="organizationCoordsysId" />
+    <result column="DEFINITION" jdbcType="VARCHAR" property="definition" />
+    <result column="DESCRIPTION" jdbcType="VARCHAR" property="description" />
+  </resultMap>
+</mapper>

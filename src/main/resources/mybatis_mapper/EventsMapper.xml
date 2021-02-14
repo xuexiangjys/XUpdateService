@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xuexiang.xupdateservice.mapper.EventsMapper">
+  <resultMap id="BaseResultMap" type="com.xuexiang.xupdateservice.model.Events">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <result column="EVENT_CATALOG" jdbcType="VARCHAR" property="eventCatalog" />
+    <result column="EVENT_SCHEMA" jdbcType="VARCHAR" property="eventSchema" />
+    <result column="EVENT_NAME" jdbcType="VARCHAR" property="eventName" />
+    <result column="DEFINER" jdbcType="VARCHAR" property="definer" />
+    <result column="TIME_ZONE" jdbcType="VARCHAR" property="timeZone" />
+    <result column="EVENT_BODY" jdbcType="VARCHAR" property="eventBody" />
+    <result column="EVENT_TYPE" jdbcType="VARCHAR" property="eventType" />
+    <result column="EXECUTE_AT" jdbcType="TIMESTAMP" property="executeAt" />
+    <result column="INTERVAL_VALUE" jdbcType="VARCHAR" property="intervalValue" />
+    <result column="INTERVAL_FIELD" jdbcType="CHAR" property="intervalField" />
+    <result column="SQL_MODE" jdbcType="CHAR" property="sqlMode" />
+    <result column="STARTS" jdbcType="TIMESTAMP" property="starts" />
+    <result column="ENDS" jdbcType="TIMESTAMP" property="ends" />
+    <result column="STATUS" jdbcType="CHAR" property="status" />
+    <result column="ON_COMPLETION" jdbcType="VARCHAR" property="onCompletion" />
+    <result column="CREATED" jdbcType="TIMESTAMP" property="created" />
+    <result column="LAST_ALTERED" jdbcType="TIMESTAMP" property="lastAltered" />
+    <result column="LAST_EXECUTED" jdbcType="TIMESTAMP" property="lastExecuted" />
+    <result column="EVENT_COMMENT" jdbcType="VARCHAR" property="eventComment" />
+    <result column="ORIGINATOR" jdbcType="INTEGER" property="originator" />
+    <result column="CHARACTER_SET_CLIENT" jdbcType="VARCHAR" property="characterSetClient" />
+    <result column="COLLATION_CONNECTION" jdbcType="VARCHAR" property="collationConnection" />
+    <result column="DATABASE_COLLATION" jdbcType="VARCHAR" property="databaseCollation" />
+    <result column="EVENT_DEFINITION" jdbcType="LONGVARCHAR" property="eventDefinition" />
+  </resultMap>
+</mapper>

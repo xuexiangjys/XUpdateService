@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xuexiang.xupdateservice.mapper.UserPrivilegesMapper">
+  <resultMap id="BaseResultMap" type="com.xuexiang.xupdateservice.model.UserPrivileges">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <result column="GRANTEE" jdbcType="VARCHAR" property="grantee" />
+    <result column="TABLE_CATALOG" jdbcType="VARCHAR" property="tableCatalog" />
+    <result column="PRIVILEGE_TYPE" jdbcType="VARCHAR" property="privilegeType" />
+    <result column="IS_GRANTABLE" jdbcType="VARCHAR" property="isGrantable" />
+  </resultMap>
+</mapper>

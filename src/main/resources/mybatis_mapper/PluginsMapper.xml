@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xuexiang.xupdateservice.mapper.PluginsMapper">
+  <resultMap id="BaseResultMap" type="com.xuexiang.xupdateservice.model.Plugins">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <result column="PLUGIN_NAME" jdbcType="VARCHAR" property="pluginName" />
+    <result column="PLUGIN_VERSION" jdbcType="VARCHAR" property="pluginVersion" />
+    <result column="PLUGIN_STATUS" jdbcType="VARCHAR" property="pluginStatus" />
+    <result column="PLUGIN_TYPE" jdbcType="VARCHAR" property="pluginType" />
+    <result column="PLUGIN_TYPE_VERSION" jdbcType="VARCHAR" property="pluginTypeVersion" />
+    <result column="PLUGIN_LIBRARY" jdbcType="VARCHAR" property="pluginLibrary" />
+    <result column="PLUGIN_LIBRARY_VERSION" jdbcType="VARCHAR" property="pluginLibraryVersion" />
+    <result column="PLUGIN_AUTHOR" jdbcType="VARCHAR" property="pluginAuthor" />
+    <result column="PLUGIN_DESCRIPTION" jdbcType="VARCHAR" property="pluginDescription" />
+    <result column="PLUGIN_LICENSE" jdbcType="VARCHAR" property="pluginLicense" />
+    <result column="LOAD_OPTION" jdbcType="VARCHAR" property="loadOption" />
+  </resultMap>
+</mapper>
